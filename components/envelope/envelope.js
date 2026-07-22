@@ -32,11 +32,13 @@ document
 .getElementById("envelope")
 .onclick=()=>{
 
-document
-.getElementById("app")
-.innerHTML=renderIntroLetter();
+navigate(
 
-initializeIntroLetter();
+    () => renderLetter("intro"),
+
+    () => initializeLetter("intro")
+
+);
 
 };
 

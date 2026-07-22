@@ -1,4 +1,46 @@
-function renderIntroLetter(){
+const LetterPages={
+
+intro:{
+
+title:"To My Favorite Person ❤️",
+
+button:"Continue ❤️",
+
+text:`
+
+If you're reading this, it means you found the correct password.
+
+I wanted to create something much more special than simply saying Happy Birthday.
+
+So I created this scrapbook.
+
+Every page has something waiting for you.
+
+I hope it makes you smile.
+
+`
+
+},
+
+main:{
+
+title:"Happy Birthday ❤️",
+
+button:"Open Scrapbook",
+
+text:`
+
+(Main birthday letter goes here.)
+
+`
+
+}
+
+};
+
+function renderLetter(type="intro"){
+
+const page=LetterPages[type];
 
 return`
 
@@ -6,51 +48,29 @@ return`
 
 <div class="letter-paper">
 
-<h1>To My Favorite Person ❤️</h1>
+<h1 class="letter-title">
 
-<p>
+${page.title}
 
-If you're reading this, it means you found the correct password.
+</h1>
 
-I wanted to create something more than just a simple birthday greeting.
+<div class="letter-content">
 
-So instead, I made this little scrapbook that tells our story in a way that words alone never could.
+${page.text}
 
-</p>
+</div>
 
-<p>
-
-Every page was made with love.
-
-Every animation...
-
-Every photo...
-
-Every little detail...
-
-Was created just for you.
-
-</p>
-
-<p>
-
-So before we continue...
-
-Take your time.
-
-Enjoy every page.
-
-I hope this makes you smile.
-
-</p>
+<div class="letter-actions">
 
 <button
-id="continueButton"
-class="next-button">
+id="letterButton"
+class="letter-button">
 
-Continue ❤️
+${page.button}
 
 </button>
+
+</div>
 
 </div>
 
@@ -60,16 +80,31 @@ Continue ❤️
 
 }
 
-function initializeIntroLetter(){
+function initializeLetter(type="intro"){
 
-document
-.getElementById("continueButton")
-.onclick=()=>{
+document.getElementById("letterButton").onclick=()=>{
 
- navigate(
-        renderScrapbook,
-        initializeScrapbook
-    );
+if(type==="intro"){
+
+navigate(
+
+()=>renderLetter("main"),
+
+()=>initializeLetter("main")
+
+);
+
+return;
+
+}
+
+navigate(
+
+renderScrapbook,
+
+initializeScrapbook
+
+);
 
 };
 

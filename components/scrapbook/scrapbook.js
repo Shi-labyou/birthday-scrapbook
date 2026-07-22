@@ -4,52 +4,47 @@ home:{
 
 title:"Welcome ❤️",
 
-content:`
-<h2>Happy Birthday!</h2>
+render(){
+
+return`
+
+<h2>Happy Birthday ❤️</h2>
 
 <p>
 
-Welcome to your own digital scrapbook.
+Welcome to your digital scrapbook.
 
-Every section on the left contains a different memory, message, or surprise.
-
-Take your time and enjoy everything.
+Use the menu to explore every memory.
 
 </p>
 
-`
+`;
+
+}
 
 },
 
-album:{
-
-title:"📷 Album",
-
-content:`
-
-<p>
-
-This page will become our interactive photo album.
-
-</p>
-
-`
-
-},
+album:AlbumPage,
 
 timeline:{
 
 title:"🕒 Timeline",
 
-content:`
+render(){
+
+return`
+
+<h2>Timeline</h2>
 
 <p>
 
-This page will tell our story from the beginning until today.
+Coming soon.
 
 </p>
 
-`
+`;
+
+}
 
 },
 
@@ -57,15 +52,21 @@ map:{
 
 title:"🗺️ Places",
 
-content:`
+render(){
+
+return`
+
+<h2>Places</h2>
 
 <p>
 
-Places we've been together.
+Coming soon.
 
 </p>
 
-`
+`;
+
+}
 
 },
 
@@ -73,15 +74,21 @@ reasons:{
 
 title:"❤️ Reasons",
 
-content:`
+render(){
+
+return`
+
+<h2>Reasons</h2>
 
 <p>
 
-100 reasons why I appreciate you.
+Coming soon.
 
 </p>
 
-`
+`;
+
+}
 
 },
 
@@ -89,15 +96,21 @@ future:{
 
 title:"🌸 Future",
 
-content:`
+render(){
+
+return`
+
+<h2>Future</h2>
 
 <p>
 
-Dreams we'll achieve together.
+Coming soon.
 
 </p>
 
-`
+`;
+
+}
 
 }
 
@@ -124,9 +137,7 @@ return`
 ${Object.keys(scrapbookPages).map(key=>`
 
 <button
-
 class="sidebar-button ${active===key?"active":""}"
-
 data-page="${key}">
 
 ${scrapbookPages[key].title}
@@ -141,17 +152,7 @@ ${scrapbookPages[key].title}
 
 <div class="paper">
 
-<h1 class="page-title">
-
-${page.title}
-
-</h1>
-
-<div class="page-content">
-
-${page.content}
-
-</div>
+${page.render()}
 
 </div>
 
