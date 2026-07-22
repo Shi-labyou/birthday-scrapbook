@@ -1,40 +1,111 @@
-function renderScrapbook(active="home"){
-
-const pages={
+const scrapbookPages={
 
 home:{
+
 title:"Welcome ❤️",
-content:"Choose a section from the left."
+
+content:`
+<h2>Happy Birthday!</h2>
+
+<p>
+
+Welcome to your own digital scrapbook.
+
+Every section on the left contains a different memory, message, or surprise.
+
+Take your time and enjoy everything.
+
+</p>
+
+`
+
 },
 
 album:{
+
 title:"📷 Album",
-content:"Album will be built here."
+
+content:`
+
+<p>
+
+This page will become our interactive photo album.
+
+</p>
+
+`
+
 },
 
 timeline:{
+
 title:"🕒 Timeline",
-content:"Timeline will be built here."
+
+content:`
+
+<p>
+
+This page will tell our story from the beginning until today.
+
+</p>
+
+`
+
 },
 
 map:{
+
 title:"🗺️ Places",
-content:"Places will be built here."
+
+content:`
+
+<p>
+
+Places we've been together.
+
+</p>
+
+`
+
 },
 
 reasons:{
+
 title:"❤️ Reasons",
-content:"Reasons will be built here."
+
+content:`
+
+<p>
+
+100 reasons why I appreciate you.
+
+</p>
+
+`
+
 },
 
 future:{
+
 title:"🌸 Future",
-content:"Future plans will be built here."
+
+content:`
+
+<p>
+
+Dreams we'll achieve together.
+
+</p>
+
+`
+
 }
 
 };
 
-const page=pages[active];
+function renderScrapbook(active="home"){
+
+const page=scrapbookPages[active];
 
 return`
 
@@ -50,21 +121,25 @@ return`
 
 </h2>
 
-<button class="sidebar-button" data-page="home">🏠 Home</button>
+${Object.keys(scrapbookPages).map(key=>`
 
-<button class="sidebar-button" data-page="album">📷 Album</button>
+<button
 
-<button class="sidebar-button" data-page="timeline">🕒 Timeline</button>
+class="sidebar-button ${active===key?"active":""}"
 
-<button class="sidebar-button" data-page="map">🗺️ Places</button>
+data-page="${key}">
 
-<button class="sidebar-button" data-page="reasons">❤️ Reasons</button>
+${scrapbookPages[key].title}
 
-<button class="sidebar-button" data-page="future">🌸 Future</button>
+</button>
+
+`).join("")}
 
 </div>
 
 <div class="scrapbook-page">
+
+<div class="paper">
 
 <h1 class="page-title">
 
@@ -72,9 +147,11 @@ ${page.title}
 
 </h1>
 
-<div class="page-placeholder">
+<div class="page-content">
 
 ${page.content}
+
+</div>
 
 </div>
 
