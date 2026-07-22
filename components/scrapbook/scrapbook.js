@@ -70,7 +70,21 @@ document.querySelectorAll(".menu-card").forEach(card=>{
 
 card.onclick=()=>{
 
+switch(card.dataset.page){
+
+case "album":
+
+document.getElementById("app").innerHTML=renderAlbum();
+
+initializeAlbum();
+
+break;
+
+default:
+
 alert(card.dataset.page+" page coming soon.");
+
+}
 
 };
 
