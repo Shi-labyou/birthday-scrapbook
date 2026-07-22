@@ -4,21 +4,21 @@ return`
 
 <div class="envelope-screen">
 
-    <div
-        class="envelope"
-        id="envelope">
+<div
+class="envelope"
+id="envelope">
 
-        <div class="envelope-flap"></div>
+<div class="envelope-flap"></div>
 
-        <div class="envelope-base"></div>
+<div class="envelope-base"></div>
 
-    </div>
+</div>
 
-    <div class="envelope-text">
+<div class="envelope-text">
 
-        Click the envelope ❤️
+Click the envelope ❤️
 
-    </div>
+</div>
 
 </div>
 
@@ -28,11 +28,15 @@ return`
 
 function initializeEnvelopeScreen(){
 
-const envelope=document.getElementById("envelope");
+document
+.getElementById("envelope")
+.onclick=()=>{
 
-envelope.onclick=()=>{
+document
+.getElementById("app")
+.innerHTML=renderIntroLetter();
 
-alert("Next: Intro Letter");
+initializeIntroLetter();
 
 };
 
