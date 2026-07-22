@@ -90,9 +90,9 @@ function initializePasswordScreen() {
 
             setTimeout(()=>{
 
-                document.getElementById("app").innerHTML=renderLoadingScreen();
+              document.getElementById("app").innerHTML=renderLoadingScreen();
 
-                const text=document.getElementById("loadingText");
+                initializeLoadingScreen();
 
                 setTimeout(()=>{
 

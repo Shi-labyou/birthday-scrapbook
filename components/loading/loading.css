@@ -1,0 +1,43 @@
+.loading-screen{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    gap:30px;
+
+    background:
+    linear-gradient(135deg,#fde4f2,#f9cee7);
+
+}
+
+.loader{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    border:7px solid white;
+
+    border-top-color:#eea1cd;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading-title{
+
+    font-size:2rem;
+
+}
+
+.loading-subtitle{
+
+    opacity:.75;
+
+}
