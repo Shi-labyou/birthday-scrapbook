@@ -1,56 +1,80 @@
-function renderScrapbook(){
+function renderScrapbook(active="home"){
+
+const pages={
+
+home:{
+title:"Welcome ❤️",
+content:"Choose a section from the left."
+},
+
+album:{
+title:"📷 Album",
+content:"Album will be built here."
+},
+
+timeline:{
+title:"🕒 Timeline",
+content:"Timeline will be built here."
+},
+
+map:{
+title:"🗺️ Places",
+content:"Places will be built here."
+},
+
+reasons:{
+title:"❤️ Reasons",
+content:"Reasons will be built here."
+},
+
+future:{
+title:"🌸 Future",
+content:"Future plans will be built here."
+}
+
+};
+
+const page=pages[active];
 
 return`
 
 <div class="scrapbook-screen">
 
-<div class="scrapbook-container">
+<div class="scrapbook-book">
 
-<h1 class="scrapbook-title">
+<div class="scrapbook-sidebar">
 
-📖 Our Birthday Scrapbook
+<h2 class="sidebar-title">
+
+📖 Scrapbook
+
+</h2>
+
+<button class="sidebar-button" data-page="home">🏠 Home</button>
+
+<button class="sidebar-button" data-page="album">📷 Album</button>
+
+<button class="sidebar-button" data-page="timeline">🕒 Timeline</button>
+
+<button class="sidebar-button" data-page="map">🗺️ Places</button>
+
+<button class="sidebar-button" data-page="reasons">❤️ Reasons</button>
+
+<button class="sidebar-button" data-page="future">🌸 Future</button>
+
+</div>
+
+<div class="scrapbook-page">
+
+<h1 class="page-title">
+
+${page.title}
 
 </h1>
 
-<div class="menu-grid">
+<div class="page-placeholder">
 
-<div class="menu-card" data-page="album">
-
-<h3>📷 Album</h3>
-
-<p>Our favorite memories together.</p>
-
-</div>
-
-<div class="menu-card" data-page="timeline">
-
-<h3>🕒 Timeline</h3>
-
-<p>The story of us.</p>
-
-</div>
-
-<div class="menu-card" data-page="map">
-
-<h3>🗺️ Places</h3>
-
-<p>Places we've been.</p>
-
-</div>
-
-<div class="menu-card" data-page="reasons">
-
-<h3>❤️ Reasons</h3>
-
-<p>100 reasons why I love you.</p>
-
-</div>
-
-<div class="menu-card" data-page="future">
-
-<h3>🌸 Future</h3>
-
-<p>Dreams we'll achieve together.</p>
+${page.content}
 
 </div>
 
@@ -66,26 +90,17 @@ return`
 
 function initializeScrapbook(){
 
-document.querySelectorAll(".menu-card").forEach(card=>{
+document.querySelectorAll(".sidebar-button").forEach(button=>{
 
-card.onclick=()=>{
-
-switch(card.dataset.page){
-
-case "album":
+button.onclick=()=>{
 
 navigate(
-    renderAlbum,
-    initializeAlbum
+
+()=>renderScrapbook(button.dataset.page),
+
+initializeScrapbook
+
 );
-
-break;
-
-default:
-
-alert(card.dataset.page+" page coming soon.");
-
-}
 
 };
 

@@ -3,84 +3,116 @@
     width:100%;
     height:100%;
 
-    background:linear-gradient(135deg,#fde4f2,#f9cee7);
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    padding:30px;
+    padding:40px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f9d8ea,
+        #fdeff7
+    );
 
 }
 
-.scrapbook-container{
+.scrapbook-book{
 
-    width:min(1100px,95%);
+    width:min(1200px,95%);
+    height:90vh;
 
-    background:white;
+    background:#faf6ef;
 
     border-radius:25px;
 
-    padding:35px;
+    display:flex;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
+    overflow:hidden;
 
-}
-
-.scrapbook-title{
-
-    text-align:center;
-
-    margin-bottom:35px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
 
 }
 
-.menu-grid{
+.scrapbook-sidebar{
 
-    display:grid;
+    width:270px;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:20px;
-
-}
-
-.menu-card{
-
-    background:#fdeaf4;
+    background:#f3e7d3;
 
     padding:25px;
 
-    border-radius:18px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.sidebar-title{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.sidebar-button{
+
+    border:none;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
 
     cursor:pointer;
 
     transition:.25s;
 
+    text-align:left;
+
+}
+
+.sidebar-button:hover{
+
+    transform:translateX(6px);
+
+}
+
+.scrapbook-page{
+
+    flex:1;
+
+    background:#fffdf8;
+
+    padding:40px;
+
+    overflow:auto;
+
+}
+
+.page-title{
+
+    margin-bottom:20px;
+
+}
+
+.page-placeholder{
+
+    margin-top:40px;
+
+    padding:40px;
+
+    border:3px dashed #e6d8be;
+
+    border-radius:18px;
+
     text-align:center;
 
-}
-
-.menu-card:hover{
-
-    transform:translateY(-6px);
-
-    background:#f8d7eb;
-
-}
-
-.menu-card h3{
-
-    margin-bottom:12px;
-
-}
-
-.menu-card p{
-
-    opacity:.75;
-
-    font-size:.9rem;
+    color:#888;
 
 }
