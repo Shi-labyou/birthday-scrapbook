@@ -109,3 +109,59 @@ transform:translateY(0);
 }
 
 }
+
+.letter-paper::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.letter-paper::-webkit-scrollbar-thumb{
+
+    background:#eea1cd;
+
+    border-radius:999px;
+
+}
+
+.letter-paper{
+
+    scroll-behavior:smooth;
+
+}
+
+.letter-button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+.read-progress{
+
+    width:100%;
+
+    height:6px;
+
+    background:#f2dce8;
+
+    border-radius:999px;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+}
+
+.read-progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#eea1cd;
+
+    transition:.15s;
+
+}

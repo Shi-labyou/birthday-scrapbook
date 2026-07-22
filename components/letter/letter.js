@@ -1,12 +1,12 @@
-const LetterPages = {
+const LetterPages={
 
-    intro: {
+intro:{
 
-        title: "To My Favorite Person ❤️",
+title:"To My Favorite Person ❤️",
 
-        button: "Continue ❤️",
+button:"Continue ❤️",
 
-        text: `
+text:`
 
 If you're reading this, it means you found the correct password.
 
@@ -20,56 +20,76 @@ I hope it makes you smile.
 
 `
 
-    },
+},
 
-    main: {
+main:{
 
-        title: "Happy Birthday ❤️",
+title:"Happy Birthday ❤️",
 
-        button: "Enter Our Scrapbook",
+button:"Enter Our Scrapbook",
 
-        text: ``
+text:`
 
-    }
+YOUR MAIN LETTER WILL GO HERE.
+
+For now, this is placeholder text.
+
+In the final version you'll simply replace this block with your complete birthday message.
+
+`
+
+}
 
 };
 
-function renderLetter(type = "intro") {
+function renderLetter(type="intro"){
 
-    const page = LetterPages[type];
+const page=LetterPages[type];
 
-    return `
+return`
 
 <div class="letter-screen">
 
-    <div class="letter-paper">
+<div
+class="letter-paper"
+id="letterPaper">
 
-        <h1 class="letter-title">
+<div class="read-progress">
 
-            ${page.title}
+<div
+id="progressBar"
+class="read-progress-bar">
 
-        </h1>
+</div>
 
-        <div
-            class="letter-content"
-            id="letterContent">
+</div>
 
-        </div>
+<h1 class="letter-title">
 
-        <div class="letter-actions">
+${page.title}
 
-            <button
-                id="letterButton"
-                class="letter-button"
-                disabled>
+</h1>
 
-                ${page.button}
+<div
+id="letterContent"
+class="letter-content">
 
-            </button>
+</div>
 
-        </div>
+<div class="letter-actions">
 
-    </div>
+<button
+id="letterButton"
+class="letter-button"
+disabled>
+
+${page.button}
+
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -77,78 +97,100 @@ function renderLetter(type = "intro") {
 
 }
 
-function typeWriter(text, element, callback) {
+function typeWriter(text,element,callback){
 
-    let index = 0;
+let i=0;
 
-    function type() {
+function write(){
 
-        if (index < text.length) {
+if(i<text.length){
 
-            element.textContent += text.charAt(index);
+element.textContent+=text[i];
 
-            index++;
+i++;
 
-            setTimeout(type, 18);
+setTimeout(write,18);
 
-        } else {
+}else{
 
-            callback();
-
-        }
-
-    }
-
-    type();
+callback();
 
 }
 
-function initializeLetter(type = "intro") {
+}
 
-    const page = LetterPages[type];
+write();
 
-    const content = document.getElementById("letterContent");
+}
 
-    const button = document.getElementById("letterButton");
+function initializeLetter(type="intro"){
 
-    typeWriter(
+const page=LetterPages[type];
 
-        page.text.trim(),
+const paper=document.getElementById("letterPaper");
 
-        content,
+const content=document.getElementById("letterContent");
 
-        () => {
+const button=document.getElementById("letterButton");
 
-            button.disabled = false;
+const progress=document.getElementById("progressBar");
 
-        }
+typeWriter(
 
-    );
+page.text.trim(),
 
-    button.onclick = () => {
+content,
 
-        if (type === "intro") {
+()=>{
 
-            navigate(
+button.disabled=false;
 
-                () => renderLetter("main"),
+}
 
-                () => initializeLetter("main")
+);
 
-            );
+paper.addEventListener("scroll",()=>{
 
-            return;
+const max=
 
-        }
+paper.scrollHeight-paper.clientHeight;
 
-        navigate(
+const percent=
 
-            renderScrapbook,
+max<=0
 
-            initializeScrapbook
+?100
 
-        );
+:(paper.scrollTop/max)*100;
 
-    };
+progress.style.width=percent+"%";
+
+});
+
+button.onclick=()=>{
+
+if(type==="intro"){
+
+navigate(
+
+()=>renderLetter("main"),
+
+()=>initializeLetter("main")
+
+);
+
+return;
+
+}
+
+navigate(
+
+renderScrapbook,
+
+initializeScrapbook
+
+);
+
+};
 
 }
