@@ -66,7 +66,9 @@ document
 .getElementById("continueButton")
 .onclick=()=>{
 
-alert("Next: Scrapbook Home");
+document.getElementById("app").innerHTML=renderScrapbook();
+
+initializeScrapbook();
 
 };
 
