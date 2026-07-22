@@ -43,55 +43,77 @@ function renderPasswordScreen() {
 
 }
 
+function renderLoadingScreen(){
+
+    return `
+
+    <div class="loading-screen">
+
+        <div class="loader"></div>
+
+        <div
+            id="loadingText"
+            class="loading-text">
+
+            Preparing your surprise...
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
 function initializePasswordScreen() {
 
-    const screen = document.querySelector(".password-screen");
-    const card = document.querySelector(".password-card");
+    const screen=document.querySelector(".password-screen");
+    const card=document.querySelector(".password-card");
 
-    const input = document.getElementById("passwordInput");
-    const button = document.getElementById("passwordButton");
-    const message = document.getElementById("passwordMessage");
+    const input=document.getElementById("passwordInput");
+    const button=document.getElementById("passwordButton");
+    const message=document.getElementById("passwordMessage");
 
-    function login() {
+    function login(){
 
-        if (input.value === APP_PASSWORD) {
+        if(input.value===APP_PASSWORD){
 
-            message.style.color = "#2E7D32";
-            message.textContent = "Access Granted ❤️";
+            message.style.color="#2E7D32";
+            message.textContent="Access Granted ❤️";
 
-            button.textContent = "Opening...";
+            button.textContent="Opening...";
 
-            button.disabled = true;
-            input.disabled = true;
+            button.disabled=true;
+            input.disabled=true;
 
             screen.classList.add("fade-out");
 
-            setTimeout(() => {
+            setTimeout(()=>{
 
-                document.getElementById("app").innerHTML = `
+                document.getElementById("app").innerHTML=renderLoadingScreen();
 
-                <div style="
-                    width:100%;
-                    height:100%;
-                    display:flex;
-                    justify-content:center;
-                    align-items:center;
-                    background:linear-gradient(135deg,#fde4f2,#f9cee7);
-                    font-size:2rem;
-                    font-family:'Cormorant Garamond',serif;
-                ">
+                const text=document.getElementById("loadingText");
 
-                    🌸 Loading...
+                setTimeout(()=>{
 
-                </div>
+                    text.textContent="Creating beautiful memories...";
 
-                `;
+                },1200);
+
+                setTimeout(()=>{
+
+                    text.textContent="Almost ready...";
+
+                },2400);
 
             },700);
 
-        } else {
+        }
+
+        else{
 
             message.style.color="#D32F2F";
+
             message.textContent="Incorrect Password";
 
             card.classList.remove("shake");
