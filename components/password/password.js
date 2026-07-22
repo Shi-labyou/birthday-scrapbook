@@ -45,6 +45,9 @@ function renderPasswordScreen() {
 
 function initializePasswordScreen() {
 
+    const screen = document.querySelector(".password-screen");
+    const card = document.querySelector(".password-card");
+
     const input = document.getElementById("passwordInput");
     const button = document.getElementById("passwordButton");
     const message = document.getElementById("passwordMessage");
@@ -56,19 +59,46 @@ function initializePasswordScreen() {
             message.style.color = "#2E7D32";
             message.textContent = "Access Granted ❤️";
 
+            button.textContent = "Opening...";
+
             button.disabled = true;
             input.disabled = true;
 
+            screen.classList.add("fade-out");
+
             setTimeout(() => {
 
-                alert("Password correct! Loading scrapbook...");
+                document.getElementById("app").innerHTML = `
 
-            }, 500);
+                <div style="
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    background:linear-gradient(135deg,#fde4f2,#f9cee7);
+                    font-size:2rem;
+                    font-family:'Cormorant Garamond',serif;
+                ">
+
+                    🌸 Loading...
+
+                </div>
+
+                `;
+
+            },700);
 
         } else {
 
-            message.style.color = "#D32F2F";
-            message.textContent = "Incorrect Password";
+            message.style.color="#D32F2F";
+            message.textContent="Incorrect Password";
+
+            card.classList.remove("shake");
+
+            void card.offsetWidth;
+
+            card.classList.add("shake");
 
             input.select();
 
@@ -76,11 +106,11 @@ function initializePasswordScreen() {
 
     }
 
-    button.addEventListener("click", login);
+    button.onclick=login;
 
-    input.addEventListener("keydown", (event) => {
+    input.addEventListener("keydown",(event)=>{
 
-        if (event.key === "Enter") {
+        if(event.key==="Enter"){
 
             login();
 
