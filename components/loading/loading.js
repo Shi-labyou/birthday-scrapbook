@@ -44,7 +44,9 @@ subtitle.textContent="Almost ready...";
 
 setTimeout(()=>{
 
-alert("Next milestone: Envelope Screen");
+document.getElementById("app").innerHTML=renderEnvelopeScreen();
+
+initializeEnvelopeScreen();
 
 },4000);
 
