@@ -1,11 +1,4 @@
 #app{
-
-width:100vw;
-
-height:100vh;
-
-position:relative;
-
-animation:fade .4s;
-
+    width:100vw;
+    height:100vh;
 }
