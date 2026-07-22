@@ -1,12 +1,12 @@
-const LetterPages={
+const LetterPages = {
 
-intro:{
+    intro: {
 
-title:"To My Favorite Person ❤️",
+        title: "To My Favorite Person ❤️",
 
-button:"Continue ❤️",
+        button: "Continue ❤️",
 
-text:`
+        text: `
 
 If you're reading this, it means you found the correct password.
 
@@ -20,59 +20,56 @@ I hope it makes you smile.
 
 `
 
-},
+    },
 
-main:{
+    main: {
 
-title:"Happy Birthday ❤️",
+        title: "Happy Birthday ❤️",
 
-button:"Open Scrapbook",
+        button: "Enter Our Scrapbook",
 
-text:`
+        text: ``
 
-(Main birthday letter goes here.)
-
-`
-
-}
+    }
 
 };
 
-function renderLetter(type="intro"){
+function renderLetter(type = "intro") {
 
-const page=LetterPages[type];
+    const page = LetterPages[type];
 
-return`
+    return `
 
 <div class="letter-screen">
 
-<div class="letter-paper">
+    <div class="letter-paper">
 
-<h1 class="letter-title">
+        <h1 class="letter-title">
 
-${page.title}
+            ${page.title}
 
-</h1>
+        </h1>
 
-<div class="letter-content">
+        <div
+            class="letter-content"
+            id="letterContent">
 
-${page.text}
+        </div>
 
-</div>
+        <div class="letter-actions">
 
-<div class="letter-actions">
+            <button
+                id="letterButton"
+                class="letter-button"
+                disabled>
 
-<button
-id="letterButton"
-class="letter-button">
+                ${page.button}
 
-${page.button}
+            </button>
 
-</button>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </div>
 
@@ -80,32 +77,78 @@ ${page.button}
 
 }
 
-function initializeLetter(type="intro"){
+function typeWriter(text, element, callback) {
 
-document.getElementById("letterButton").onclick=()=>{
+    let index = 0;
 
-if(type==="intro"){
+    function type() {
 
-navigate(
+        if (index < text.length) {
 
-()=>renderLetter("main"),
+            element.textContent += text.charAt(index);
 
-()=>initializeLetter("main")
+            index++;
 
-);
+            setTimeout(type, 18);
 
-return;
+        } else {
+
+            callback();
+
+        }
+
+    }
+
+    type();
 
 }
 
-navigate(
+function initializeLetter(type = "intro") {
 
-renderScrapbook,
+    const page = LetterPages[type];
 
-initializeScrapbook
+    const content = document.getElementById("letterContent");
 
-);
+    const button = document.getElementById("letterButton");
 
-};
+    typeWriter(
+
+        page.text.trim(),
+
+        content,
+
+        () => {
+
+            button.disabled = false;
+
+        }
+
+    );
+
+    button.onclick = () => {
+
+        if (type === "intro") {
+
+            navigate(
+
+                () => renderLetter("main"),
+
+                () => initializeLetter("main")
+
+            );
+
+            return;
+
+        }
+
+        navigate(
+
+            renderScrapbook,
+
+            initializeScrapbook
+
+        );
+
+    };
 
 }
