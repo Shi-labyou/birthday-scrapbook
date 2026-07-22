@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    const app = document.getElementById("app");
+navigate(
 
-    app.innerHTML = renderPasswordScreen();
+renderPasswordScreen,
 
-    initializePasswordScreen();
+initializePasswordScreen
+
+);
 
 });

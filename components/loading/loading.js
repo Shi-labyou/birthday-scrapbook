@@ -44,9 +44,10 @@ subtitle.textContent="Almost ready...";
 
 setTimeout(()=>{
 
-document.getElementById("app").innerHTML=renderEnvelopeScreen();
-
-initializeEnvelopeScreen();
+navigate(
+    renderEnvelopeScreen,
+    initializeEnvelopeScreen
+);
 
 },4000);
 

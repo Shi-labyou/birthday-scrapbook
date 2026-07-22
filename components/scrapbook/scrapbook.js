@@ -74,9 +74,10 @@ switch(card.dataset.page){
 
 case "album":
 
-document.getElementById("app").innerHTML=renderAlbum();
-
-initializeAlbum();
+navigate(
+    renderAlbum,
+    initializeAlbum
+);
 
 break;
 

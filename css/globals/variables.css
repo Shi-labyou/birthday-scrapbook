@@ -1,15 +1,13 @@
 :root{
 
-    --primary:#fde4f2;
-    --secondary:#f9cee7;
-    --accent:#f4b8da;
-    --accentDark:#eea1cd;
+    --pink:#eea1cd;
+    --lightPink:#fde4f2;
+    --cream:#fffdf9;
 
-    --paper:#fffdf9;
+    --shadow:0 18px 40px rgba(0,0,0,.15);
 
-    --text:#4b3c42;
+    --radius:22px;
 
-    --shadow:
-        0 15px 40px rgba(0,0,0,.15);
+    --transition:.35s;
 
 }

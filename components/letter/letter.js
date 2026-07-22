@@ -66,9 +66,10 @@ document
 .getElementById("continueButton")
 .onclick=()=>{
 
-document.getElementById("app").innerHTML=renderScrapbook();
-
-initializeScrapbook();
+ navigate(
+        renderScrapbook,
+        initializeScrapbook
+    );
 
 };
 
