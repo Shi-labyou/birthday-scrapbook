@@ -1,39 +1,55 @@
 .places-grid{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:24px;
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+
+gap:25px;
 
 }
 
 .place-card{
 
-    background:white;
+background:#fffdf8;
 
-    border-radius:18px;
+border-radius:18px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.place-card:hover{
+
+transform:translateY(-6px);
 
 }
 
 .place-image{
 
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:cover;
+width:100%;
+
+aspect-ratio:4/3;
+
+object-fit:cover;
 
 }
 
 .place-content{
 
-    padding:20px;
+padding:20px;
 
 }
 
-.place-content h3{
+.place-location{
 
-    margin-bottom:10px;
+margin:10px 0;
+
+opacity:.7;
+
+font-size:.95rem;
 
 }

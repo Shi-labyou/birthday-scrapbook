@@ -1,52 +1,48 @@
-const PlacesPage = {
+const PlacesPage={
 
-    title: "🗺️ Places",
+title:"🗺️ Places",
 
-    places: [
+places:PlacesData,
 
-        {
-            name: "First Place",
-            description: "Replace with your memory.",
-            image: "assets/images/album/placeholder.jpg"
-        },
+render(){
 
-        {
-            name: "Favorite Spot",
-            description: "Replace with your memory.",
-            image: "assets/images/album/placeholder.jpg"
-        },
+return`
 
-        {
-            name: "Another Memory",
-            description: "Replace with your memory.",
-            image: "assets/images/album/placeholder.jpg"
-        }
+<h1 class="page-title">
 
-    ],
+🗺️ Places We've Been
 
-    render() {
-
-        return `
-
-<h1 class="page-title">🗺️ Special Places</h1>
+</h1>
 
 <div class="places-grid">
 
-${this.places.map(place => `
+${this.places.map(place=>`
 
 <div class="place-card">
 
 <img
+
 class="place-image"
+
 src="${place.image}"
-alt="${place.name}"
+
 onerror="this.src='assets/images/album/placeholder.jpg'">
 
 <div class="place-content">
 
 <h3>${place.name}</h3>
 
-<p>${place.description}</p>
+<p class="place-location">
+
+📍 ${place.location}
+
+</p>
+
+<p>
+
+${place.description}
+
+</p>
 
 </div>
 
@@ -58,6 +54,6 @@ onerror="this.src='assets/images/album/placeholder.jpg'">
 
 `;
 
-    }
+}
 
 };
