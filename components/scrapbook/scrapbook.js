@@ -26,16 +26,18 @@ Use the menu to explore every memory.
 
 album:AlbumPage,
 
-timeline: TimelinePage,
+timeline:TimelinePage,
 
-places: PlacesPage, 
+places:PlacesPage,
 
-reasons: ReasonsPage,
+reasons:ReasonsPage,
 
-future: FuturePage,
-music: EndingPage
+future:FuturePage,
+
+ending:EndingPage
 
 };
+
 
 function renderScrapbook(active="home"){
 
@@ -69,6 +71,7 @@ ${scrapbookPages[key].title}
 
 </div>
 
+
 <div class="scrapbook-page">
 
 <div class="paper">
@@ -79,6 +82,7 @@ ${page.render()}
 
 </div>
 
+
 </div>
 
 </div>
@@ -87,34 +91,31 @@ ${page.render()}
 
 }
 
+
 function initializeScrapbook(){
 
-    document.querySelectorAll(".sidebar-button").forEach(button=>{
+document.querySelectorAll(".sidebar-button").forEach(button=>{
 
-        button.onclick=()=>{
+button.onclick=()=>{
 
-            navigate(
+navigate(
 
-                ()=>renderScrapbook(button.dataset.page),
+()=>renderScrapbook(button.dataset.page),
 
-                initializeScrapbook
+initializeScrapbook
 
-            );
+);
 
-        };
+};
 
-    });
+});
 
-    if(document.getElementById("albumViewer")){
 
-        initializeAlbumViewer();
+if(document.getElementById("albumViewer")){
 
-        if(document.getElementById("musicAudio")){
-
-    initializeMusic();
+initializeAlbumViewer();
 
 }
 
-    }
 
 }
