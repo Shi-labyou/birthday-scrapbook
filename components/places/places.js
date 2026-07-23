@@ -14,41 +14,37 @@ return`
 
 </h1>
 
-<div class="places-grid">
-
-${this.places.map(place=>`
-
-<div class="place-card">
+<div class="map-board">
 
 <img
 
-class="place-image"
+class="map-image"
 
-src="${place.image}"
+src="assets/images/map/philippines-placeholder.jpg"
 
-onerror="this.src='assets/images/album/placeholder.jpg'">
+onerror="this.style.display='none'">
 
-<div class="place-content">
+${this.places.map((place,index)=>`
 
-<h3>${place.name}</h3>
+<button
 
-<p class="place-location">
+class="map-pin"
 
-📍 ${place.location}
+style="top:${place.top};left:${place.left};"
 
-</p>
+data-index="${index}">
 
-<p>
+📍
 
-${place.description}
-
-</p>
-
-</div>
-
-</div>
+</button>
 
 `).join("")}
+
+</div>
+
+<div id="placeInfo" class="place-info">
+
+Select a location.
 
 </div>
 
@@ -57,3 +53,31 @@ ${place.description}
 }
 
 };
+
+function initializePlaces(){
+
+const info=document.getElementById("placeInfo");
+
+if(!info) return;
+
+document.querySelectorAll(".map-pin").forEach(pin=>{
+
+pin.onclick=()=>{
+
+const place=PlacesData[pin.dataset.index];
+
+info.innerHTML=`
+
+<h3>${place.name}</h3>
+
+<p><strong>${place.location}</strong></p>
+
+<p>${place.description}</p>
+
+`;
+
+};
+
+});
+
+}

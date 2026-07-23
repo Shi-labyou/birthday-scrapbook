@@ -247,6 +247,12 @@ ${page.render()}
 
 function initializeScrapbook(){
 
+    if(document.querySelector(".map-pin")){
+
+initializePlaces();
+
+}
+
 document.querySelectorAll(".sidebar-button").forEach(button=>{
 
 
