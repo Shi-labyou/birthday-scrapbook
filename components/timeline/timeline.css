@@ -1,0 +1,80 @@
+.timeline{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+    margin:40px 0;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:15px;
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    background:#eea1cd;
+
+    border-radius:999px;
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:20px;
+
+    position:relative;
+
+}
+
+.timeline-dot{
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    background:#eea1cd;
+
+    flex-shrink:0;
+
+    z-index:2;
+
+}
+
+.timeline-card{
+
+    flex:1;
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.timeline-date{
+
+    display:inline-block;
+
+    margin-bottom:10px;
+
+    color:#eea1cd;
+
+    font-weight:700;
+
+}

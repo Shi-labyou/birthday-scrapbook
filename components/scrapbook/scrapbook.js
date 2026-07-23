@@ -26,27 +26,7 @@ Use the menu to explore every memory.
 
 album:AlbumPage,
 
-timeline:{
-
-title:"🕒 Timeline",
-
-render(){
-
-return`
-
-<h2>Timeline</h2>
-
-<p>
-
-Coming soon.
-
-</p>
-
-`;
-
-}
-
-},
+timeline: TimelinePage,
 
 map:{
 
