@@ -2,27 +2,7 @@ const AlbumPage = {
 
     title: "📷 Album",
 
-    photos: [
-
-        {
-            image: "assets/images/album/placeholder.jpg",
-            title: "Memory One",
-            description: "Replace with your own memory."
-        },
-
-        {
-            image: "assets/images/album/placeholder.jpg",
-            title: "Memory Two",
-            description: "Replace with your own memory."
-        },
-
-        {
-            image: "assets/images/album/placeholder.jpg",
-            title: "Memory Three",
-            description: "Replace with your own memory."
-        }
-
-    ],
+    photos:AlbumData,
 
     render() {
 

@@ -6,17 +6,124 @@ title:"Welcome ❤️",
 
 render(){
 
+const memories=[
+
+{
+id:"album",
+name:"📷 Album"
+},
+
+{
+id:"timeline",
+name:"🕒 Timeline"
+},
+
+{
+id:"places",
+name:"🗺️ Places"
+},
+
+{
+id:"reasons",
+name:"❤️ Reasons"
+},
+
+{
+id:"future",
+name:"🌸 Future"
+}
+
+];
+
+
+const completed=memories.filter(memory=>
+
+ScrapbookStorage.isVisited(memory.id)
+
+).length;
+
+
 return`
 
-<h2>Happy Birthday ❤️</h2>
+<div class="scrapbook-home">
+
+<h1>
+
+Happy Birthday ❤️
+
+</h1>
+
 
 <p>
 
-Welcome to your digital scrapbook.
+Welcome to your personal scrapbook.
 
-Explore every memory to unlock the final surprise.
+Explore every chapter to unlock the final surprise.
 
 </p>
+
+
+<div class="progress-box">
+
+<h3>
+
+Memory Progress
+
+</h3>
+
+
+<p>
+
+${completed} / ${memories.length} memories discovered
+
+</p>
+
+
+<div class="memory-progress">
+
+<div
+
+class="memory-progress-fill"
+
+style="width:${(completed/memories.length)*100}%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="memory-list">
+
+
+${memories.map(memory=>`
+
+<div class="memory-item">
+
+${memory.name}
+
+${
+
+ScrapbookStorage.isVisited(memory.id)
+
+? " ✓"
+
+: " 🔒"
+
+}
+
+</div>
+
+
+`).join("")}
+
+
+</div>
+
+
+</div>
 
 `;
 
@@ -51,6 +158,13 @@ pages.ending={
 title:"🌙 Ending ✨",
 
 render(){
+
+setTimeout(()=>{
+
+initializeEnding();
+
+},50);
+
 
 return EndingPage.render();
 

@@ -1,36 +1,53 @@
-const EndingPage = {
+const EndingPage={
 
-    title:"🌙 Ending",
+title:"🌙 Ending ✨",
 
-    render(){
+render(){
 
-        return`
+return`
 
-<div class="ending-screen">
+<div id="endingOverlay" class="ending-overlay">
 
-<h1>Happy Birthday ❤️</h1>
+<div class="ending-scene">
+
+
+<h1>
+
+✨ Happy Birthday ❤️
+
+</h1>
+
 
 <p>
 
-I hope this little scrapbook made you smile.
+You discovered every memory.
 
-Thank you for being part of my memories.
+This is the final chapter.
 
 </p>
 
-<button
-id="replayButton"
-class="ending-button">
 
-Replay ❤️
+<p>
+
+Thank you for being part of this journey.
+
+</p>
+
+
+<button id="replayButton">
+
+Replay Memories
 
 </button>
+
+
+</div>
 
 </div>
 
 `;
 
-    }
+}
 
 };
 
@@ -39,10 +56,14 @@ function initializeEnding(){
 
 const button=document.getElementById("replayButton");
 
+
 if(!button) return;
 
 
 button.onclick=()=>{
+
+ScrapbookStorage.reset();
+
 
 navigate(
 
