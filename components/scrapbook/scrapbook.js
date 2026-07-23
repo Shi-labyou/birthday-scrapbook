@@ -31,27 +31,8 @@ timeline: TimelinePage,
 places: PlacesPage, 
 
 reasons: ReasonsPage,
-future:{
 
-title:"🌸 Future",
-
-render(){
-
-return`
-
-<h2>Future</h2>
-
-<p>
-
-Coming soon.
-
-</p>
-
-`;
-
-}
-
-}
+future: FuturePage
 
 };
 

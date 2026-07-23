@@ -10,13 +10,6 @@ const LetterPages = {
 
 If you're reading this, it means you found the correct password.
 
-I wanted to create something much more special than simply saying Happy Birthday.
-
-So I created this scrapbook.
-
-Every page has something waiting for you.
-
-I hope it makes you smile.
 
 `
 
@@ -32,9 +25,6 @@ I hope it makes you smile.
 
 YOUR MAIN LETTER WILL GO HERE.
 
-For now, this is placeholder text.
-
-In the final version you'll simply replace this block with your complete birthday message.
 
 `
 
