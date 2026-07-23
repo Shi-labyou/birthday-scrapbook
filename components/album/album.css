@@ -1,208 +1,63 @@
-.album-screen{
-
-    width:100%;
-    height:100%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:linear-gradient(135deg,#fde4f2,#f9cee7);
-
-    padding:35px;
-
-}
-
-.album-container{
-
-    width:min(1200px,95%);
-    height:90%;
-
-    background:white;
-
-    border-radius:25px;
-
-    padding:30px;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-    overflow:auto;
-
-}
-
-.album-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
-}
-
-.back-button{
-
-    padding:12px 22px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#eea1cd;
-
-    color:white;
-
-    cursor:pointer;
-
-}
-
 .album-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
 
     gap:25px;
 
 }
 
-.photo-card{
+.album-card{
 
-    height:240px;
-
-    background:#fdeaf4;
+    background:white;
 
     border-radius:18px;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
+    overflow:hidden;
 
     cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 
     transition:.25s;
 
 }
 
-.photo-card:hover{
+.album-card:hover{
 
     transform:translateY(-6px);
 
 }
 
-.photo-placeholder{
-
-    font-size:4rem;
-
-}
-
-.photo-title{
-
-    margin-top:15px;
-
-}
-
-.photo-viewer{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.85);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.3s;
-
-    z-index:999;
-
-}
-
-.photo-viewer.show{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-}
-
-.viewer-content{
-
-    width:min(90%,900px);
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-}
-
-.viewer-image{
+.album-image{
 
     width:100%;
-    height:500px;
 
-    border-radius:15px;
+    aspect-ratio:4/3;
+
+    object-fit:cover;
 
     background:#ececec;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+}
 
-    font-size:5rem;
+.album-info{
+
+    padding:18px;
 
 }
 
-.viewer-title{
+.album-title{
 
-    margin-top:20px;
-
-    text-align:center;
+    margin-bottom:8px;
 
 }
 
-.viewer-description{
-
-    margin-top:15px;
-
-    text-align:center;
+.album-description{
 
     opacity:.75;
 
-}
-
-.close-viewer{
-
-    margin-top:25px;
-
-    width:100%;
-
-    padding:14px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#eea1cd;
-
-    color:white;
-
-    cursor:pointer;
+    line-height:1.6;
 
 }

@@ -1,12 +1,12 @@
-const LetterPages={
+const LetterPages = {
 
-intro:{
+    intro: {
 
-title:"To My Favorite Person ❤️",
+        title: "To My Favorite Person ❤️",
 
-button:"Continue ❤️",
+        button: "Continue ❤️",
 
-text:`
+        text: `
 
 If you're reading this, it means you found the correct password.
 
@@ -20,15 +20,15 @@ I hope it makes you smile.
 
 `
 
-},
+    },
 
-main:{
+    main: {
 
-title:"Happy Birthday ❤️",
+        title: "Happy Birthday ❤️",
 
-button:"Enter Our Scrapbook",
+        button: "Enter Our Scrapbook",
 
-text:`
+        text: `
 
 YOUR MAIN LETTER WILL GO HERE.
 
@@ -38,58 +38,44 @@ In the final version you'll simply replace this block with your complete birthda
 
 `
 
-}
+    }
 
 };
 
-function renderLetter(type="intro"){
+function renderLetter(type = "intro") {
 
-const page=LetterPages[type];
+    const page = LetterPages[type];
 
-return`
+    return `
 
 <div class="letter-screen">
 
-<div
-class="letter-paper"
-id="letterPaper">
+    <div class="letter-paper" id="letterPaper">
 
-<div class="read-progress">
+        <div class="read-progress">
+            <div id="progressBar" class="read-progress-bar"></div>
+        </div>
 
-<div
-id="progressBar"
-class="read-progress-bar">
+        <h1 class="letter-title">
+            ${page.title}
+        </h1>
 
-</div>
+        <div id="letterContent" class="letter-content"></div>
 
-</div>
+        <div class="letter-actions">
 
-<h1 class="letter-title">
+            <button
+                id="letterButton"
+                class="letter-button"
+                disabled>
 
-${page.title}
+                ${page.button}
 
-</h1>
+            </button>
 
-<div
-id="letterContent"
-class="letter-content">
+        </div>
 
-</div>
-
-<div class="letter-actions">
-
-<button
-id="letterButton"
-class="letter-button"
-disabled>
-
-${page.button}
-
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
@@ -97,100 +83,89 @@ ${page.button}
 
 }
 
-function typeWriter(text,element,callback){
+function typeWriter(text, element, progressBar, callback) {
 
-let i=0;
+    let index = 0;
 
-function write(){
+    const totalCharacters = text.length;
 
-if(i<text.length){
+    function write() {
 
-element.textContent+=text[i];
+        if (index < totalCharacters) {
 
-i++;
+            element.textContent += text[index];
 
-setTimeout(write,18);
+            index++;
 
-}else{
+            const percent = (index / totalCharacters) * 100;
+            progressBar.style.width = percent + "%";
 
-callback();
+            setTimeout(write, 18);
 
-}
+        } else {
 
-}
+            progressBar.style.width = "100%";
 
-write();
+            callback();
 
-}
+        }
 
-function initializeLetter(type="intro"){
+    }
 
-const page=LetterPages[type];
-
-const paper=document.getElementById("letterPaper");
-
-const content=document.getElementById("letterContent");
-
-const button=document.getElementById("letterButton");
-
-const progress=document.getElementById("progressBar");
-
-typeWriter(
-
-page.text.trim(),
-
-content,
-
-()=>{
-
-button.disabled=false;
+    write();
 
 }
 
-);
+function initializeLetter(type = "intro") {
 
-paper.addEventListener("scroll",()=>{
+    const page = LetterPages[type];
 
-const max=
+    const content = document.getElementById("letterContent");
+    const button = document.getElementById("letterButton");
+    const progress = document.getElementById("progressBar");
 
-paper.scrollHeight-paper.clientHeight;
+    progress.style.width = "0%";
 
-const percent=
+    typeWriter(
 
-max<=0
+        page.text.trim(),
 
-?100
+        content,
 
-:(paper.scrollTop/max)*100;
+        progress,
 
-progress.style.width=percent+"%";
+        () => {
 
-});
+            button.disabled = false;
 
-button.onclick=()=>{
+        }
 
-if(type==="intro"){
+    );
 
-navigate(
+    button.onclick = () => {
 
-()=>renderLetter("main"),
+        if (type === "intro") {
 
-()=>initializeLetter("main")
+            navigate(
 
-);
+                () => renderLetter("main"),
 
-return;
+                () => initializeLetter("main")
 
-}
+            );
 
-navigate(
+            return;
 
-renderScrapbook,
+        }
 
-initializeScrapbook
+        navigate(
 
-);
+            renderScrapbook,
 
-};
+            initializeScrapbook
+
+        );
+
+    };
 
 }

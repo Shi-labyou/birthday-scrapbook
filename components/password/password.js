@@ -43,28 +43,6 @@ function renderPasswordScreen() {
 
 }
 
-function renderLoadingScreen(){
-
-    return `
-
-    <div class="loading-screen">
-
-        <div class="loader"></div>
-
-        <div
-            id="loadingText"
-            class="loading-text">
-
-            Preparing your surprise...
-
-        </div>
-
-    </div>
-
-    `;
-
-}
-
 function initializePasswordScreen() {
 
     const screen=document.querySelector(".password-screen");
@@ -93,18 +71,6 @@ function initializePasswordScreen() {
               document.getElementById("app").innerHTML=renderLoadingScreen();
 
                 initializeLoadingScreen();
-
-                setTimeout(()=>{
-
-                    text.textContent="Creating beautiful memories...";
-
-                },1200);
-
-                setTimeout(()=>{
-
-                    text.textContent="Almost ready...";
-
-                },2400);
 
             },700);
 
