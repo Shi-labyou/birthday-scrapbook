@@ -253,6 +253,12 @@ initializePlaces();
 
 }
 
+    if(document.querySelector(".reason-card")){
+
+initializeReasons();
+
+}
+
 document.querySelectorAll(".sidebar-button").forEach(button=>{
 
 

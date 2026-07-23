@@ -1,58 +1,64 @@
 .reasons-grid{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:22px;
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+gap:25px;
 
 }
 
 .reason-card{
 
-    background:white;
+position:relative;
 
-    border-radius:18px;
+height:180px;
 
-    padding:28px;
+transform-style:preserve-3d;
 
-    text-align:center;
+transition:.6s;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-    transition:.25s;
-
-    cursor:pointer;
+cursor:pointer;
 
 }
 
-.reason-card:hover{
+.reason-card.flipped{
 
-    transform:translateY(-6px);
-
-}
-
-.reason-number{
-
-    width:52px;
-    height:52px;
-
-    margin:auto auto 18px;
-
-    border-radius:50%;
-
-    background:#eea1cd;
-
-    color:white;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-weight:bold;
+transform:rotateY(180deg);
 
 }
 
-.reason-text{
+.reason-front,
+.reason-back{
 
-    line-height:1.7;
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+border-radius:18px;
+
+backface-visibility:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+background:white;
+
+text-align:center;
+
+}
+
+.reason-back{
+
+transform:rotateY(180deg);
+
+background:#ffe8f3;
 
 }

@@ -1,37 +1,40 @@
-const ReasonsPage = {
+const ReasonsPage={
 
-    title: "❤️ Reasons",
+title:"❤️ Reasons",
 
-    reasons: [
+reasons:ReasonsData,
 
-        "Reason #1",
-        "Reason #2",
-        "Reason #3",
-        "Reason #4",
-        "Reason #5",
-        "Reason #6"
+render(){
 
-    ],
+return`
 
-    render() {
+<h1 class="page-title">
 
-        return `
+100 Reasons Why I Love You ❤️
 
-<h1 class="page-title">❤️ Reasons I Love You</h1>
+</h1>
 
 <div class="reasons-grid">
 
 ${this.reasons.map((reason,index)=>`
 
-<div class="reason-card">
+<div
 
-<div class="reason-number">
-${index+1}
+class="reason-card"
+
+data-index="${index}">
+
+<div class="reason-front">
+
+${reason.title}
+
 </div>
 
-<p class="reason-text">
-${reason}
-</p>
+<div class="reason-back">
+
+${reason.text}
+
+</div>
 
 </div>
 
@@ -41,6 +44,21 @@ ${reason}
 
 `;
 
-    }
+}
 
 };
+
+
+function initializeReasons(){
+
+document.querySelectorAll(".reason-card").forEach(card=>{
+
+card.onclick=()=>{
+
+card.classList.toggle("flipped");
+
+};
+
+});
+
+}
