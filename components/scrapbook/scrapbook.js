@@ -34,7 +34,7 @@ reasons:ReasonsPage,
 
 future:FuturePage,
 
-ending:EndingPage
+
 
 };
 
@@ -64,6 +64,7 @@ class="sidebar-button ${active===key?"active":""}"
 data-page="${key}">
 
 ${scrapbookPages[key].title}
+${ScrapbookStorage.isVisited(key) ? " ✓" : ""}
 
 </button>
 
@@ -98,9 +99,13 @@ document.querySelectorAll(".sidebar-button").forEach(button=>{
 
 button.onclick=()=>{
 
+const page=button.dataset.page;
+
+ScrapbookStorage.markVisited(page);
+
 navigate(
 
-()=>renderScrapbook(button.dataset.page),
+()=>renderScrapbook(page),
 
 initializeScrapbook
 
@@ -114,6 +119,13 @@ initializeScrapbook
 if(document.getElementById("albumViewer")){
 
 initializeAlbumViewer();
+
+}
+
+
+if(document.getElementById("replayButton")){
+
+initializeEnding();
 
 }
 

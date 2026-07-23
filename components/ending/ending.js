@@ -1,28 +1,30 @@
 const EndingPage = {
 
-    title: "🌙 Ending",
+    title:"🌙 Ending",
 
-    render() {
+    render(){
 
-        return `
+        return`
 
 <div class="ending-screen">
 
-    <h1>Happy Birthday ❤️</h1>
+<h1>Happy Birthday ❤️</h1>
 
-    <p>
+<p>
 
-        Thank you for taking the time to go through every page.
+I hope this little scrapbook made you smile.
 
-        I hope this scrapbook made you smile.
+Thank you for being part of my memories.
 
-    </p>
+</p>
 
-    <button id="replayButton" class="ending-button">
+<button
+id="replayButton"
+class="ending-button">
 
-        Replay Scrapbook
+Replay ❤️
 
-    </button>
+</button>
 
 </div>
 
@@ -32,18 +34,24 @@ const EndingPage = {
 
 };
 
+
 function initializeEnding(){
 
-    document.getElementById("replayButton").onclick=()=>{
+const button=document.getElementById("replayButton");
 
-        navigate(
+if(!button) return;
 
-            renderPasswordScreen,
 
-            initializePasswordScreen
+button.onclick=()=>{
 
-        );
+navigate(
 
-    };
+renderPasswordScreen,
+
+initializePasswordScreen
+
+);
+
+};
 
 }
