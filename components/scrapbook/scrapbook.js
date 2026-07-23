@@ -30,28 +30,7 @@ timeline: TimelinePage,
 
 places: PlacesPage, 
 
-reasons:{
-
-title:"❤️ Reasons",
-
-render(){
-
-return`
-
-<h2>Reasons</h2>
-
-<p>
-
-Coming soon.
-
-</p>
-
-`;
-
-}
-
-},
-
+reasons: ReasonsPage,
 future:{
 
 title:"🌸 Future",
