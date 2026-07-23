@@ -14,7 +14,7 @@ return`
 
 Welcome to your digital scrapbook.
 
-Use the menu to explore every memory.
+Explore every memory to unlock the final surprise.
 
 </p>
 
@@ -32,22 +32,44 @@ places:PlacesPage,
 
 reasons:ReasonsPage,
 
-future:FuturePage,
-
-
+future:FuturePage
 
 };
 
 
 function renderScrapbook(active="home"){
 
-const page=scrapbookPages[active];
+const completed=checkScrapbookCompletion();
+
+const pages={...scrapbookPages};
+
+
+if(completed){
+
+pages.ending={
+
+title:"🌙 Ending ✨",
+
+render(){
+
+return EndingPage.render();
+
+}
+
+};
+
+}
+
+
+const page=pages[active];
+
 
 return`
 
 <div class="scrapbook-screen">
 
 <div class="scrapbook-book">
+
 
 <div class="scrapbook-sidebar">
 
@@ -57,18 +79,34 @@ return`
 
 </h2>
 
-${Object.keys(scrapbookPages).map(key=>`
+
+${Object.keys(pages).map(key=>`
 
 <button
+
 class="sidebar-button ${active===key?"active":""}"
+
 data-page="${key}">
 
-${scrapbookPages[key].title}
-${ScrapbookStorage.isVisited(key) ? " ✓" : ""}
+
+${pages[key].title}
+
+${
+
+key!=="home" && key!=="ending" && ScrapbookStorage.isVisited(key)
+
+? " ✓"
+
+: ""
+
+}
+
 
 </button>
 
+
 `).join("")}
+
 
 </div>
 
@@ -97,11 +135,19 @@ function initializeScrapbook(){
 
 document.querySelectorAll(".sidebar-button").forEach(button=>{
 
+
 button.onclick=()=>{
+
 
 const page=button.dataset.page;
 
+
+if(page!=="home" && page!=="ending"){
+
 ScrapbookStorage.markVisited(page);
+
+}
+
 
 navigate(
 
@@ -111,7 +157,9 @@ initializeScrapbook
 
 );
 
+
 };
+
 
 });
 
