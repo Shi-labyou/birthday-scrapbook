@@ -32,7 +32,7 @@ places: PlacesPage,
 
 reasons: ReasonsPage,
 
-future: FuturePage
+future: FuturePage,
 
 };
 
@@ -107,6 +107,12 @@ function initializeScrapbook(){
     if(document.getElementById("albumViewer")){
 
         initializeAlbumViewer();
+
+        if(document.getElementById("musicAudio")){
+
+    initializeMusic();
+
+}
 
     }
 

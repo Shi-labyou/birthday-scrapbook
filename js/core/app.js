@@ -1,11 +1,21 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
-navigate(
+    document.body.insertAdjacentHTML(
 
-renderPasswordScreen,
+        "beforeend",
 
-initializePasswordScreen
+        renderMusicPlayer()
 
-);
+    );
+
+    initializeMusicPlayer();
+
+    navigate(
+
+        renderPasswordScreen,
+
+        initializePasswordScreen
+
+    );
 
 });
