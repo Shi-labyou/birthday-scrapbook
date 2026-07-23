@@ -33,6 +33,7 @@ places: PlacesPage,
 reasons: ReasonsPage,
 
 future: FuturePage,
+music: EndingPage
 
 };
 

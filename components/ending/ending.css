@@ -1,0 +1,38 @@
+.ending-screen{
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    gap:24px;
+
+}
+
+.ending-screen p{
+
+    max-width:600px;
+
+    line-height:1.8;
+
+}
+
+.ending-button{
+
+    border:none;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    background:#eea1cd;
+
+    color:white;
+
+    cursor:pointer;
+
+}

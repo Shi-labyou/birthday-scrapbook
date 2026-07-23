@@ -134,19 +134,33 @@ function initializeLetter(type = "intro") {
 
     button.onclick = () => {
 
-        if (type === "intro") {
+        if(type==="intro"){
 
-            navigate(
+navigate(
 
-                () => renderLetter("main"),
+()=>renderPasswordScreen({
 
-                () => initializeLetter("main")
+title:"One More Thing ❤️",
 
-            );
+subtitle:"One last password before you continue...",
 
-            return;
+password:"18th",
 
-        }
+button:"Unlock ❤️",
+
+nextRender:()=>renderLetter("main"),
+
+nextInit:()=>initializeLetter("main")
+
+}),
+
+initializePasswordScreen
+
+);
+
+return;
+
+}
 
         navigate(
 

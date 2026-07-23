@@ -1,49 +1,78 @@
-const APP_PASSWORD = "happybirthday";
+function renderPasswordScreen({
 
-function renderPasswordScreen() {
+    title="Our Scrapbook",
+    subtitle="Enter the password",
+    password="happybirthday",
+    button="Open",
+    successText="Access Granted ❤️",
+    nextRender=renderLoadingScreen,
+    nextInit=initializeLoadingScreen
 
-    return `
+}={}){
 
-    <div class="password-screen">
+    window.__PASSWORD_CONFIG__={
 
-        <div class="password-card">
+        password,
+        successText,
+        nextRender,
+        nextInit
 
-            <h1 class="password-title">
-                Our Scrapbook
-            </h1>
+    };
 
-            <p class="password-subtitle">
-                Enter the password
-            </p>
+    return`
 
-            <input
-                id="passwordInput"
-                class="password-input"
-                type="password"
-                placeholder="Password">
+<div class="password-screen">
 
-            <button
-                id="passwordButton"
-                class="password-button">
+    <div class="password-card">
 
-                Open
+        <h1 class="password-title">
 
-            </button>
+            ${title}
 
-            <p
-                id="passwordMessage"
-                class="password-message">
-            </p>
+        </h1>
 
-        </div>
+        <p class="password-subtitle">
+
+            ${subtitle}
+
+        </p>
+
+        <input
+        id="passwordInput"
+        class="password-input"
+        type="password"
+        placeholder="Password">
+
+        <button
+        id="passwordButton"
+        class="password-button">
+
+            ${button}
+
+        </button>
+
+        <p
+        id="passwordMessage"
+        class="password-message"></p>
 
     </div>
 
-    `;
+</div>
+
+`;
 
 }
 
-function initializePasswordScreen() {
+function initializePasswordScreen(){
+
+    const{
+
+        password,
+        successText,
+        nextRender,
+        nextInit
+
+    }=window.__PASSWORD_CONFIG__;
 
     const screen=document.querySelector(".password-screen");
     const card=document.querySelector(".password-card");
@@ -54,12 +83,10 @@ function initializePasswordScreen() {
 
     function login(){
 
-        if(input.value===APP_PASSWORD){
+        if(input.value===password){
 
             message.style.color="#2E7D32";
-            message.textContent="Access Granted ❤️";
-
-            button.textContent="Opening...";
+            message.textContent=successText;
 
             button.disabled=true;
             input.disabled=true;
@@ -68,9 +95,13 @@ function initializePasswordScreen() {
 
             setTimeout(()=>{
 
-              document.getElementById("app").innerHTML=renderLoadingScreen();
+                navigate(
 
-                initializeLoadingScreen();
+                    nextRender,
+
+                    nextInit
+
+                );
 
             },700);
 
@@ -79,13 +110,10 @@ function initializePasswordScreen() {
         else{
 
             message.style.color="#D32F2F";
-
             message.textContent="Incorrect Password";
 
             card.classList.remove("shake");
-
             void card.offsetWidth;
-
             card.classList.add("shake");
 
             input.select();
@@ -96,9 +124,9 @@ function initializePasswordScreen() {
 
     button.onclick=login;
 
-    input.addEventListener("keydown",(event)=>{
+    input.addEventListener("keydown",e=>{
 
-        if(event.key==="Enter"){
+        if(e.key==="Enter"){
 
             login();
 
