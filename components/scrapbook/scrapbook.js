@@ -168,20 +168,26 @@ ${page.render()}
 
 function initializeScrapbook(){
 
-document.querySelectorAll(".sidebar-button").forEach(button=>{
+    document.querySelectorAll(".sidebar-button").forEach(button=>{
 
-button.onclick=()=>{
+        button.onclick=()=>{
 
-navigate(
+            navigate(
 
-()=>renderScrapbook(button.dataset.page),
+                ()=>renderScrapbook(button.dataset.page),
 
-initializeScrapbook
+                initializeScrapbook
 
-);
+            );
 
-};
+        };
 
-});
+    });
+
+    if(document.getElementById("albumViewer")){
+
+        initializeAlbumViewer();
+
+    }
 
 }

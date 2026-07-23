@@ -1,83 +1,57 @@
-const AlbumPage={
+const AlbumPage = {
 
-title:"📷 Album",
+    title: "📷 Album",
 
-photos:[
+    photos: [
 
-{
+        {
+            image: "assets/images/album/placeholder.jpg",
+            title: "Memory One",
+            description: "Replace with your own memory."
+        },
 
-image:"assets/images/album/placeholder.jpg",
+        {
+            image: "assets/images/album/placeholder.jpg",
+            title: "Memory Two",
+            description: "Replace with your own memory."
+        },
 
-title:"Memory One",
+        {
+            image: "assets/images/album/placeholder.jpg",
+            title: "Memory Three",
+            description: "Replace with your own memory."
+        }
 
-description:"Replace with your own memory."
+    ],
 
-},
+    render() {
 
-{
+        return `
 
-image:"assets/images/album/placeholder.jpg",
-
-title:"Memory Two",
-
-description:"Replace with your own memory."
-
-},
-
-{
-
-image:"assets/images/album/placeholder.jpg",
-
-title:"Memory Three",
-
-description:"Replace with your own memory."
-
-}
-
-],
-
-render(){
-
-return`
-
-<h1 class="page-title">
-
-📷 Our Album
-
-</h1>
+<h1 class="page-title">📷 Our Album</h1>
 
 <div class="album-grid">
 
 ${this.photos.map((photo,index)=>`
 
 <div
-
 class="album-card"
-
 data-index="${index}">
 
 <img
-
 class="album-image"
-
 src="${photo.image}"
-
 alt="${photo.title}"
-
 onerror="this.src='assets/images/album/placeholder.jpg'">
 
 <div class="album-info">
 
 <h3 class="album-title">
-
 ${photo.title}
-
 </h3>
 
 <p class="album-description">
-
 ${photo.description}
-
 </p>
 
 </div>
@@ -88,8 +62,96 @@ ${photo.description}
 
 </div>
 
+<div id="albumViewer" class="album-viewer hidden">
+
+<div class="album-overlay"></div>
+
+<div class="album-modal">
+
+<button class="album-close">&times;</button>
+
+<button class="album-nav album-prev">&#10094;</button>
+
+<img id="viewerImage" class="viewer-image">
+
+<div class="viewer-info">
+
+<h2 id="viewerTitle"></h2>
+
+<p id="viewerDescription"></p>
+
+</div>
+
+<button class="album-nav album-next">&#10095;</button>
+
+</div>
+
+</div>
+
 `;
 
-}
+    }
 
 };
+
+function initializeAlbumViewer(){
+
+    const viewer=document.getElementById("albumViewer");
+
+    if(!viewer) return;
+
+    const image=document.getElementById("viewerImage");
+    const title=document.getElementById("viewerTitle");
+    const description=document.getElementById("viewerDescription");
+
+    let currentIndex=0;
+
+    function show(index){
+
+        currentIndex=(index+AlbumPage.photos.length)%AlbumPage.photos.length;
+
+        const photo=AlbumPage.photos[currentIndex];
+
+        image.src=photo.image;
+        image.onerror=()=>image.src="assets/images/album/placeholder.jpg";
+
+        title.textContent=photo.title;
+        description.textContent=photo.description;
+
+        viewer.classList.remove("hidden");
+
+    }
+
+    function close(){
+
+        viewer.classList.add("hidden");
+
+    }
+
+    document.querySelectorAll(".album-card").forEach(card=>{
+
+        card.onclick=()=>show(Number(card.dataset.index));
+
+    });
+
+    viewer.querySelector(".album-close").onclick=close;
+
+    viewer.querySelector(".album-overlay").onclick=close;
+
+    viewer.querySelector(".album-prev").onclick=()=>show(currentIndex-1);
+
+    viewer.querySelector(".album-next").onclick=()=>show(currentIndex+1);
+
+    document.addEventListener("keydown",e=>{
+
+        if(viewer.classList.contains("hidden")) return;
+
+        if(e.key==="Escape") close();
+
+        if(e.key==="ArrowLeft") show(currentIndex-1);
+
+        if(e.key==="ArrowRight") show(currentIndex+1);
+
+    });
+
+}
