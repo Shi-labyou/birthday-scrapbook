@@ -27,12 +27,40 @@ onerror="this.src='assets/images/album/placeholder.jpg'">
 <div class="album-info">
 
 <h3 class="album-title">
+
 ${photo.title}
+
 </h3>
 
+
 <p class="album-description">
+
 ${photo.description}
+
 </p>
+
+
+${photo.date ? `
+
+<p class="album-date">
+
+📅 ${photo.date}
+
+</p>
+
+` : ""}
+
+
+${photo.location ? `
+
+<p class="album-location">
+
+📍 ${photo.location}
+
+</p>
+
+` : ""}
+
 
 </div>
 
@@ -60,6 +88,10 @@ ${photo.description}
 
 <p id="viewerDescription"></p>
 
+<p id="viewerDate"></p>
+
+<p id="viewerLocation"></p>
+
 </div>
 
 <button class="album-nav album-next">&#10095;</button>
@@ -83,6 +115,8 @@ function initializeAlbumViewer(){
     const image=document.getElementById("viewerImage");
     const title=document.getElementById("viewerTitle");
     const description=document.getElementById("viewerDescription");
+    const date=document.getElementById("viewerDate");
+    const location=document.getElementById("viewerLocation");
     const modal=viewer.querySelector(".album-modal");
 
     let currentIndex=0;
@@ -96,13 +130,27 @@ function initializeAlbumViewer(){
 
         const photo=AlbumPage.photos[currentIndex];
 
-        image.src=photo.image;
-        image.onerror=()=>image.src="assets/images/album/placeholder.jpg";
+       image.classList.remove("viewer-change");
 
-        title.textContent=photo.title;
-        description.textContent=photo.description;
+void image.offsetWidth;
 
-        viewer.classList.remove("hidden");
+image.src=photo.image;
+
+image.onerror=()=>image.src="assets/images/album/placeholder.jpg";
+
+title.textContent=photo.title;
+
+description.textContent=photo.description;
+
+date.textContent=photo.date || "";
+
+location.textContent=photo.location || "";
+
+image.classList.add("viewer-change");
+
+viewer.classList.remove("hidden");
+
+
 
     }
 

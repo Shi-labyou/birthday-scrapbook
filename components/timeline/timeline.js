@@ -1,61 +1,83 @@
-const TimelinePage = {
+const TimelinePage={
 
-    title: "🕒 Timeline",
+title:"🕒 Timeline",
 
-    events: [
+events:TimelineData,
 
-        {
-            date: "Day 1",
-            title: "Our Story Begins",
-            description: "Replace with your first memory together."
-        },
 
-        {
-            date: "Another Day",
-            title: "A Beautiful Memory",
-            description: "Replace with another special moment."
-        },
+render(){
 
-        {
-            date: "Today",
-            title: "Happy Birthday ❤️",
-            description: "The beginning of another wonderful year."
-        }
+return`
 
-    ],
+<h1 class="page-title">
 
-    render() {
+🕒 Our Timeline
 
-        return `
+</h1>
 
-<h1 class="page-title">🕒 Our Timeline</h1>
 
-<div class="timeline">
+<div class="timeline-container">
 
-${this.events.map(event => `
+
+${this.events.map((event,index)=>`
+
 
 <div class="timeline-item">
 
-    <div class="timeline-dot"></div>
 
-    <div class="timeline-card">
+<div class="timeline-dot"></div>
 
-        <span class="timeline-date">${event.date}</span>
 
-        <h3>${event.title}</h3>
+<div class="timeline-card">
 
-        <p>${event.description}</p>
 
-    </div>
+${event.image ? `
+
+<img
+
+class="timeline-image"
+
+src="${event.image}"
+
+onerror="this.src='assets/images/album/placeholder.jpg'">
+
+` : ""}
+
+
+<h3>
+
+${event.title}
+
+</h3>
+
+
+<p class="timeline-date">
+
+${event.date}
+
+</p>
+
+
+<p>
+
+${event.description}
+
+</p>
+
 
 </div>
 
+
+</div>
+
+
 `).join("")}
+
 
 </div>
 
 `;
 
-    }
+}
 
 };
