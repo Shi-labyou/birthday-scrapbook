@@ -1,0 +1,39 @@
+.places-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:24px;
+
+}
+
+.place-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.place-image{
+
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
+
+}
+
+.place-content{
+
+    padding:20px;
+
+}
+
+.place-content h3{
+
+    margin-bottom:10px;
+
+}

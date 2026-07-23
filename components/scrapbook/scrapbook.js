@@ -28,27 +28,7 @@ album:AlbumPage,
 
 timeline: TimelinePage,
 
-map:{
-
-title:"🗺️ Places",
-
-render(){
-
-return`
-
-<h2>Places</h2>
-
-<p>
-
-Coming soon.
-
-</p>
-
-`;
-
-}
-
-},
+places: PlacesPage, 
 
 reasons:{
 
