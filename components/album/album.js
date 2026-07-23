@@ -103,8 +103,12 @@ function initializeAlbumViewer(){
     const image=document.getElementById("viewerImage");
     const title=document.getElementById("viewerTitle");
     const description=document.getElementById("viewerDescription");
+    const modal=viewer.querySelector(".album-modal");
 
     let currentIndex=0;
+
+    let startX=0;
+    let endX=0;
 
     function show(index){
 
@@ -135,11 +139,9 @@ function initializeAlbumViewer(){
     });
 
     viewer.querySelector(".album-close").onclick=close;
-
     viewer.querySelector(".album-overlay").onclick=close;
 
     viewer.querySelector(".album-prev").onclick=()=>show(currentIndex-1);
-
     viewer.querySelector(".album-next").onclick=()=>show(currentIndex+1);
 
     document.addEventListener("keydown",e=>{
@@ -151,6 +153,32 @@ function initializeAlbumViewer(){
         if(e.key==="ArrowLeft") show(currentIndex-1);
 
         if(e.key==="ArrowRight") show(currentIndex+1);
+
+    });
+
+    modal.addEventListener("touchstart",e=>{
+
+        startX=e.changedTouches[0].clientX;
+
+    });
+
+    modal.addEventListener("touchend",e=>{
+
+        endX=e.changedTouches[0].clientX;
+
+        const distance=endX-startX;
+
+        if(Math.abs(distance)<50) return;
+
+        if(distance>0){
+
+            show(currentIndex-1);
+
+        }else{
+
+            show(currentIndex+1);
+
+        }
 
     });
 
