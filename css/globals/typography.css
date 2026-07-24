@@ -1,13 +1,81 @@
-body{
+@font-face{
 
-font-family:Poppins,sans-serif;
+font-family:"GreatVibes";
 
-color:var(--text);
+src:url("../../assets/fonts/GreatVibes-Regular.ttf");
 
 }
 
-h1,h2,h3{
+@font-face{
 
-font-family:"Cormorant Garamond",serif;
+font-family:"Cormorant";
+
+src:url("../../assets/fonts/CormorantGaramond-Regular.ttf");
+
+}
+
+@font-face{
+
+font-family:"CormorantBold";
+
+src:url("../../assets/fonts/CormorantGaramond-SemiBold.ttf");
+
+}
+
+@font-face{
+
+font-family:"Poppins";
+
+src:url("../../assets/fonts/Poppins-Regular.ttf");
+
+}
+
+@font-face{
+
+font-family:"PoppinsBold";
+
+src:url("../../assets/fonts/Poppins-SemiBold.ttf");
+
+}
+
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+color:var(--text-main);
+
+}
+
+
+.page-title{
+
+font-family:"GreatVibes",cursive;
+
+font-size:3rem;
+
+color:var(--text-title);
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+.paper{
+
+font-family:"Cormorant",serif;
+
+font-size:1.2rem;
+
+line-height:1.8;
+
+}
+
+
+button{
+
+font-family:"Poppins";
 
 }

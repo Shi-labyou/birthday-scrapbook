@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         "beforeend",
 
+        renderDecorations()
+
+    );
+
+    document.body.insertAdjacentHTML(
+
+        "beforeend",
+
         renderMusicPlayer()
 
     );

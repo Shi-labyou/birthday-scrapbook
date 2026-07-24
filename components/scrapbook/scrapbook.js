@@ -227,9 +227,11 @@ key!=="home" && key!=="ending" && ScrapbookStorage.isVisited(key)
 
 <div class="scrapbook-page">
 
-<div class="paper">
+<div class="paper page-enter">
 
 ${page.render()}
+
+<div class="paper-decoration-bottom"></div>
 
 </div>
 

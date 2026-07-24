@@ -42,13 +42,13 @@
 
 .album-image{
 
-    width:100%;
+    background:white;
 
-    aspect-ratio:1/1;
+padding:10px;
 
-    object-fit:cover;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
 
-    background:#ececec;
+border-radius:4px;
 
 }
 
@@ -92,23 +92,31 @@
 
 .album-card::before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    top:-10px;
+top:-75px;
+left:50%;
 
-    left:50%;
+transform:
+translateX(-50%)
+rotate(-6deg);
 
-    transform:translateX(-50%);
+width:220px;
+height:150px;
 
-    width:80px;
+background:url("../../assets/decorations/tape-1.png");
 
-    height:25px;
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
 
-    background:rgba(255,230,180,.7);
+pointer-events:none;
 
-    opacity:.7;
+opacity:.95;
+
+z-index:5;
 
 }
 
@@ -297,5 +305,44 @@ to{
     transform:scale(1);
 
 }
+
+}
+
+.album-card:nth-child(odd){
+
+transform:rotate(-3deg);
+
+}
+
+.album-card:nth-child(even){
+
+transform:rotate(3deg);
+
+}
+
+.album-card:nth-child(3n){
+
+transform:rotate(-1.5deg);
+
+}
+
+.album-card{
+
+transition:
+transform .3s ease,
+box-shadow .3s ease;
+
+}
+
+.album-card:hover{
+
+transform:
+translateY(-8px)
+scale(1.03)
+rotate(0deg);
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+z-index:10;
 
 }
