@@ -8,9 +8,10 @@ const AlbumPage = {
 
         return `
 
-<h1 class="page-title">📷 Our Album</h1>
+<h1 class="page-title">Our Album</h1>
 
 <div class="album-summary">
+
 
 ❤️ ${this.photos.length} Memories Collected
 

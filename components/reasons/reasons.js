@@ -10,7 +10,7 @@ return`
 
 <h1 class="page-title">
 
-100 Reasons Why I Love You ❤️
+100 Reasons Why I Love You
 
 </h1>
 

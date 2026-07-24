@@ -47,23 +47,22 @@ return`
 
 <div class="scrapbook-home">
 
-<h1>
+<h1 class="home-title">
 
-Happy Birthday ❤️
+Happy Birthday
 
 </h1>
 
+<p class="home-subtitle">
 
-<p>
-
-Welcome to your personal scrapbook.
-
-Explore every chapter to unlock the final surprise.
+Every memory in this scrapbook was made with love.
+Complete every chapter to unlock the final surprise.
 
 </p>
 
-
 <div class="progress-box">
+
+<div class="progress-header">
 
 <h3>
 
@@ -71,57 +70,49 @@ Memory Progress
 
 </h3>
 
+<span>
 
-<p>
+${completed} / ${memories.length}
 
-${completed} / ${memories.length} memories discovered
+</span>
 
-</p>
-
+</div>
 
 <div class="memory-progress">
 
 <div
-
 class="memory-progress-fill"
-
 style="width:${(completed/memories.length)*100}%">
 
 </div>
 
 </div>
 
-
 </div>
-
 
 <div class="memory-list">
 
-
 ${memories.map(memory=>`
 
-<div class="memory-item">
+<div class="memory-item ${ScrapbookStorage.isVisited(memory.id) ? "completed" : ""}">
 
-${memory.name}
+<span>
 
-${
+${memory.name.replace(/[^\w\s']/g,"").trim()}
 
-ScrapbookStorage.isVisited(memory.id)
+</span>
 
-? " ✓"
+<div class="memory-status">
 
-: " 🔒"
-
-}
+${ScrapbookStorage.isVisited(memory.id) ? "Completed" : "Locked"}
 
 </div>
 
+</div>
 
 `).join("")}
 
-
 </div>
-
 
 </div>
 
@@ -189,7 +180,7 @@ return`
 
 <h2 class="sidebar-title">
 
-📖 Scrapbook
+Scrapbook
 
 </h2>
 
@@ -198,22 +189,14 @@ ${Object.keys(pages).map(key=>`
 
 <button
 
-class="sidebar-button ${active===key?"active":""}"
+class="sidebar-button 
+${active===key ? "active" : ""}
+${key!=="home" && key!=="ending" && ScrapbookStorage.isVisited(key) ? "visited" : ""}"
 
 data-page="${key}">
 
 
 ${pages[key].title}
-
-${
-
-key!=="home" && key!=="ending" && ScrapbookStorage.isVisited(key)
-
-? " ✓"
-
-: ""
-
-}
 
 
 </button>

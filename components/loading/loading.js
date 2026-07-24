@@ -4,7 +4,13 @@ return`
 
 <div class="loading-screen">
 
-    <div class="loader"></div>
+    <div class="loader">
+
+    <img src="assets/decorations/flower-top-left.png">
+    <img src="assets/decorations/flower-top-right.png">
+    <img src="assets/decorations/flower-bottom-right.png">
+
+</div>
 
     <h2 class="loading-title">
 

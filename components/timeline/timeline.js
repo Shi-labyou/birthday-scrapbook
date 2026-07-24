@@ -11,7 +11,7 @@ return`
 
 <h1 class="page-title">
 
-🕒 Our Timeline
+Our Timeline
 
 </h1>
 

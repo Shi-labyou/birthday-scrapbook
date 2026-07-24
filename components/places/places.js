@@ -10,7 +10,7 @@ return`
 
 <h1 class="page-title">
 
-🗺️ Places We've Been
+Places We've Been
 
 </h1>
 
