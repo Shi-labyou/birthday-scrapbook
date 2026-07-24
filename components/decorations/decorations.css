@@ -4,15 +4,19 @@ position:absolute;
 
 top:-80px;
 
-width:16px;
+width:32px;
+height:32px;
 
-height:22px;
+background-image:
+url("../../assets/decorations/petal.png");
 
-background:#f7c8dc;
+background-size:contain;
 
-border-radius:70% 30% 70% 30%;
+background-position:center;
 
-opacity:.6;
+background-repeat:no-repeat;
+
+opacity:.75;
 
 animation:petalFall linear infinite;
 

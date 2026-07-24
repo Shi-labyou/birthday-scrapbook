@@ -20,7 +20,7 @@ Places We've Been
 
 class="map-image"
 
-src="assets/images/map/philippines-placeholder.jpg"
+src="assets/images/map/places.png"
 
 onerror="this.style.display='none'">
 
@@ -68,11 +68,19 @@ const place=PlacesData[pin.dataset.index];
 
 info.innerHTML=`
 
-<h3>${place.name}</h3>
+<h3>${place.location}</h3>
 
-<p><strong>${place.location}</strong></p>
+${place.places.map(memory=>`
 
-<p>${place.description}</p>
+<div class="place-memory">
+
+<h4>${memory.name}</h4>
+
+<p>${memory.description}</p>
+
+</div>
+
+`).join("")}
 
 `;
 

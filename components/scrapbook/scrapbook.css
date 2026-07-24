@@ -200,23 +200,29 @@ position:relative;
 
 overflow:auto;
 
-padding:50px;
+padding:55px;
 
 background:
 linear-gradient(
-rgba(255,255,255,.35),
-rgba(255,255,255,.35)
+rgba(255,255,255,.52),
+rgba(255,255,255,.42)
 ),
 url("../../assets/backgrounds/paper-texture.png");
 
 background-size:cover;
 background-position:center;
 
-border-radius:22px;
+border-radius:26px;
+
+border:1px solid rgba(255,255,255,.45);
 
 box-shadow:
-0 15px 40px rgba(0,0,0,.12),
-inset 0 0 30px rgba(255,255,255,.35);
+0 30px 70px rgba(0,0,0,.15),
+0 10px 30px rgba(0,0,0,.08),
+inset 0 1px 0 rgba(255,255,255,.75),
+inset 0 0 35px rgba(255,255,255,.25);
+
+scroll-behavior:smooth;
 
 }
 
@@ -350,11 +356,14 @@ position:absolute;
 
 inset:12px;
 
-border:1px solid rgba(180,150,120,.18);
+border-radius:20px;
 
-border-radius:18px;
+border:1px solid rgba(170,140,110,.14);
 
 pointer-events:none;
+
+box-shadow:
+inset 0 0 0 1px rgba(255,255,255,.35);
 
 }
 
@@ -377,7 +386,7 @@ background-repeat:no-repeat;
 
 pointer-events:none;
 
-opacity:.75;
+opacity:.55;
 
 z-index:1;
 
@@ -543,5 +552,103 @@ opacity:.9;
 .memory-item.completed{
 
     opacity:.78;
+
+}
+
+.welcome-banner{
+
+margin-bottom:35px;
+
+text-align:center;
+
+animation:pageFade .6s;
+
+}
+
+.memory-list{
+
+display:grid;
+
+gap:16px;
+
+margin-top:30px;
+
+}
+
+.memory-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 22px;
+
+background:rgba(255,255,255,.72);
+
+border:1px solid rgba(0,0,0,.06);
+
+border-radius:16px;
+
+backdrop-filter:blur(8px);
+
+box-shadow:0 10px 22px rgba(0,0,0,.06);
+
+opacity:0;
+
+animation:pageFade .45s forwards;
+
+}
+
+.memory-name{
+
+font-weight:600;
+
+font-size:1.05rem;
+
+}
+
+.memory-item.completed{
+
+border-left:5px solid #d6b16d;
+
+}
+
+.memory-item.locked{
+
+opacity:.72;
+
+}
+
+.status-complete{
+
+padding:6px 12px;
+
+border-radius:999px;
+
+background:#efe5c6;
+
+color:#8a6a2c;
+
+font-size:.82rem;
+
+font-weight:600;
+
+}
+
+.status-locked{
+
+padding:6px 12px;
+
+border-radius:999px;
+
+background:#ececec;
+
+color:#7c7c7c;
+
+font-size:.82rem;
+
+font-weight:600;
 
 }

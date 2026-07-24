@@ -4,21 +4,35 @@ return`
 
 <div class="envelope-screen">
 
-<div
-class="envelope"
-id="envelope">
+    <div
+        class="envelope"
+        id="envelope">
 
-<div class="envelope-flap"></div>
+        <img
+            class="envelope-back"
+            src="assets/envelope/envelope-back.png"
+            alt="Envelope">
 
-<div class="envelope-base"></div>
+        <img
+            class="envelope-letter"
+            src="assets/envelope/letter.png"
+            alt="Letter">
 
-</div>
+        <img
+            class="envelope-front"
+            src="assets/envelope/envelope-front.png"
+            alt="Envelope Front">
 
-<div class="envelope-text">
+        <img
+            class="envelope-seal"
+            src="assets/envelope/seal.png"
+            alt="Seal">
 
-Click the envelope ❤️
+    </div>
 
-</div>
+    <div class="envelope-text">
+        Click the envelope
+    </div>
 
 </div>
 
@@ -28,18 +42,22 @@ Click the envelope ❤️
 
 function initializeEnvelopeScreen(){
 
-document
-.getElementById("envelope")
-.onclick=()=>{
+const envelope=document.getElementById("envelope");
 
-navigate(
+envelope.onclick=()=>{
 
-    () => renderLetter("intro"),
+    envelope.classList.add("opening");
 
-    () => initializeLetter("intro")
+    setTimeout(()=>{
 
-);
+        navigate(
+            ()=>renderLetter("intro"),
+            ()=>initializeLetter("intro")
+        );
+
+    },1300);
 
 };
 
 }
+

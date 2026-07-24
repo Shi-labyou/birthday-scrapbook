@@ -6,15 +6,15 @@ return`
 
     <div class="loader">
 
-    <img src="assets/decorations/flower-top-left.png">
-    <img src="assets/decorations/flower-top-right.png">
-    <img src="assets/decorations/flower-bottom-right.png">
+    <img src="assets/decorations/loading.png">
+    <img src="assets/decorations/loading.png">
+    <img src="assets/decorations/loading.png">
 
 </div>
 
     <h2 class="loading-title">
 
-        Preparing your surprise...
+        Preparing your journey...
 
     </h2>
 
@@ -38,15 +38,15 @@ const subtitle=document.getElementById("loadingSubtitle");
 
 setTimeout(()=>{
 
-subtitle.textContent="Creating beautiful memories...";
+subtitle.textContent="Creating all the loves...";
 
-},1200);
+},1500);
 
 setTimeout(()=>{
 
 subtitle.textContent="Almost ready...";
 
-},2400);
+},2800);
 
 setTimeout(()=>{
 
@@ -58,6 +58,6 @@ navigate(
     initializeEnvelopeScreen
 );
 
-},4000);
+},6000);
 
 }

@@ -47,6 +47,8 @@ return`
 
 <div class="scrapbook-home">
 
+<div class="welcome-banner">
+
 <h1 class="home-title">
 
 Happy Birthday
@@ -55,10 +57,12 @@ Happy Birthday
 
 <p class="home-subtitle">
 
-Every memory in this scrapbook was made with love.
-Complete every chapter to unlock the final surprise.
+Every chapter in this scrapbook is made with love and a memory loss from the outer universe.
+Explore all the pages of memories to reach the ending <3
 
 </p>
+
+</div>
 
 <div class="progress-box">
 
@@ -92,19 +96,23 @@ style="width:${(completed/memories.length)*100}%">
 
 <div class="memory-list">
 
-${memories.map(memory=>`
+${memories.map((memory,index)=>`
 
-<div class="memory-item ${ScrapbookStorage.isVisited(memory.id) ? "completed" : ""}">
+<div
+class="memory-item ${ScrapbookStorage.isVisited(memory.id)?"completed":"locked"}"
+style="animation-delay:${index*.08}s;">
 
-<span>
+<div class="memory-name">
 
 ${memory.name.replace(/[^\w\s']/g,"").trim()}
 
-</span>
+</div>
 
 <div class="memory-status">
 
-${ScrapbookStorage.isVisited(memory.id) ? "Completed" : "Locked"}
+${ScrapbookStorage.isVisited(memory.id)
+? '<span class="status-complete">Completed</span>'
+: '<span class="status-locked">Locked</span>'}
 
 </div>
 
@@ -114,9 +122,8 @@ ${ScrapbookStorage.isVisited(memory.id) ? "Completed" : "Locked"}
 
 </div>
 
-</div>
-
 `;
+
 
 }
 

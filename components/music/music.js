@@ -19,7 +19,7 @@ type="audio/mpeg">
 
 <img
 class="music-cover"
-src="assets/images/album/placeholder.jpg"
+src="assets/images/album/vinly.png"
 alt="Album Cover">
 
 <div id="vinyl" class="vinyl"></div>

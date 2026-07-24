@@ -16,57 +16,185 @@
 
 .envelope{
 
-    width:260px;
-    height:170px;
+width:min(400px,92vw);
 
-    position:relative;
+aspect-ratio:16/10;
 
-    cursor:pointer;
+position:relative;
 
-    transition:.3s;
+cursor:pointer;
+
+animation:envelopeFloat 4s ease-in-out infinite;
+
+transition:
+transform .35s ease,
+filter .35s ease;
+
+filter:drop-shadow(0 22px 40px rgba(0,0,0,.22));
 
 }
 
 .envelope:hover{
 
-    transform:translateY(-8px);
+transform:
+translateY(-8px)
+scale(1.02);
 
 }
 
-.envelope-base{
+.envelope img{
 
-    position:absolute;
+position:absolute;
 
-    bottom:0;
+left:0;
+top:0;
 
-    width:100%;
-    height:100px;
+width:100%;
+height:100%;
 
-    background:#f8b8d5;
+object-fit:contain;
 
-    border-radius:0 0 12px 12px;
+user-select:none;
+pointer-events:none;
 
 }
 
-.envelope-flap{
+.envelope-back{
+
+z-index:1;
+
+}
+
+.envelope-letter{
 
     position:absolute;
 
-    width:0;
-    height:0;
+    left:50% !important;
+    top:55% !important;
 
-    border-left:130px solid transparent;
-    border-right:130px solid transparent;
-    border-top:90px solid #eea1cd;
+    width:70% !important;
+    height:auto !important;
 
-    transform-origin:top;
+    transform:translate(-50%,-50%);
+
+    z-index:2;
+
+    object-fit:contain;
+
+    transition:
+        transform 1s cubic-bezier(.22,.8,.22,1);
+
+}
+
+.envelope.opening .envelope-letter{
+
+    transform:translate(-50%,-150%);
+
+}
+
+.envelope-front{
+
+z-index:3;
+
+}
+
+.envelope-seal{
+
+z-index:4;
+
+width:72px !important;
+height:72px !important;
+
+left:50% !important;
+top:58% !important;
+
+transform:translate(-50%,-50%);
+
+transition:
+opacity .35s ease,
+transform .35s ease;
+
+}
+
+.envelope.opening{
+
+    pointer-events:none;
+
+    animation:none;
+
+}
+
+.envelope.opening .envelope-seal{
+
+opacity:0;
+
+transform:
+translate(-50%,-50%)
+scale(.65);
+
+}
+
+@keyframes envelopeFloat{
+
+0%,100%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+}
+
+25%{
+
+transform:
+translateY(-8px)
+rotate(-1deg);
+
+}
+
+50%{
+
+transform:
+translateY(-14px)
+rotate(1deg);
+
+}
+
+75%{
+
+transform:
+translateY(-8px)
+rotate(-1deg);
+
+}
 
 }
 
 .envelope-text{
 
-    font-size:1.3rem;
+font-family:var(--font-title);
 
-    opacity:.8;
+font-size:2rem;
+
+letter-spacing:.5px;
+
+color:#5a3a35;
+
+font-weight:800;
+
+padding:12px 24px;
+
+background:
+rgba(255,245,235,.55);
+
+border-radius:20px;
+
+backdrop-filter:blur(6px);
+
+text-shadow:
+0 2px 8px rgba(255,255,255,.8);
+
+animation:
+textGlow 2.5s ease-in-out infinite;
 
 }
