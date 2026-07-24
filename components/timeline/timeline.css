@@ -93,15 +93,53 @@ left:-8px;
 
 .timeline-card{
 
-background:#fffdf8;
+position:relative;
+
+background:var(--bg-paper);
+
+border-radius:20px;
 
 padding:25px;
 
-border-radius:18px;
+margin-bottom:40px;
 
-box-shadow:
+box-shadow:var(--shadow-soft);
 
-0 12px 30px rgba(0,0,0,.12);
+transition:.3s ease;
+
+} 
+
+.timeline-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-10px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:18px;
+height:18px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+box-shadow:0 3px 8px rgba(0,0,0,.25);
+
+}
+
+.timeline-card:hover{
+
+transform:
+
+translateY(-8px)
+
+scale(1.02);
+
+box-shadow:var(--shadow-medium);
 
 }
 
