@@ -5,6 +5,7 @@ function renderPasswordScreen({
     password="happybirthday",
     button="Open",
     successText="Access Granted ❤️",
+    
     nextRender=renderLoadingScreen,
     nextInit=initializeLoadingScreen
 
@@ -95,15 +96,21 @@ function initializePasswordScreen(){
 
             setTimeout(()=>{
 
-                navigate(
+    if(nextRender===renderLoadingScreen){
 
-                    nextRender,
+        setBackground("assets/backgrounds/loading-bg.jpg");
 
-                    nextInit
+    }
 
-                );
+    navigate(
 
-            },700);
+        nextRender,
+
+        nextInit
+
+    );
+
+},700);
 
         }
 

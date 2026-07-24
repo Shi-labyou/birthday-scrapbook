@@ -107,25 +107,19 @@ inset:0;
 
 z-index:99999;
 
-background:
-
-linear-gradient(
-
-135deg,
-
-#f9d8ea,
-
-#fff7fb
-
-);
-
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url("../../assets/backgrounds/ending-bg.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 
 animation:endingAppear 1s;
 
@@ -139,6 +133,7 @@ text-align:center;
 max-width:700px;
 
 padding:50px;
+
 
 }
 

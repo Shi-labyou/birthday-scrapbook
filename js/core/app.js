@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     initializeMusicPlayer();
 
+    setBackground("assets/backgrounds/landing-bg.jpg");
+
     navigate(
 
         renderPasswordScreen,

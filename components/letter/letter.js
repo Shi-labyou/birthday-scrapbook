@@ -162,6 +162,8 @@ return;
 
 }
 
+setBackground("assets/backgrounds/scrapbook-bg.jpg");
+
         navigate(
 
             renderScrapbook,

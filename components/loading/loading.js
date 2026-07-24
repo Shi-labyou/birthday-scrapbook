@@ -44,6 +44,9 @@ subtitle.textContent="Almost ready...";
 
 setTimeout(()=>{
 
+    
+setBackground("assets/backgrounds/intro-bg.jpg");
+
 navigate(
     renderEnvelopeScreen,
     initializeEnvelopeScreen

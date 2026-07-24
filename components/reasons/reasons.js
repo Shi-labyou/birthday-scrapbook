@@ -24,6 +24,8 @@ class="reason-card"
 
 data-index="${index}">
 
+<div class="reason-inner">
+
 <div class="reason-front">
 
 ${reason.title}
@@ -33,6 +35,8 @@ ${reason.title}
 <div class="reason-back">
 
 ${reason.text}
+
+</div>
 
 </div>
 

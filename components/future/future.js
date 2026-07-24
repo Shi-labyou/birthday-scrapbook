@@ -1,50 +1,47 @@
 const FuturePage = {
 
-    title: "🌸 Future",
+title:"🌸 Future",
 
-    dreams: [
+render(){
 
-        {
-            title: "Dream #1",
-            description: "Replace with your future plan together."
-        },
+return`
 
-        {
-            title: "Dream #2",
-            description: "Replace with your future plan together."
-        },
+<div class="future-page">
 
-        {
-            title: "Dream #3",
-            description: "Replace with your future plan together."
-        }
+<div class="future-letter">
 
-    ],
+<h2>🌸 Our Future Together</h2>
 
-    render() {
+<p>
 
-        return `
+This page is reserved for the dreams we'll one day achieve together.
 
-<h1 class="page-title">🌸 Our Future</h1>
+</p>
 
-<div class="future-grid">
+<p>
 
-${this.dreams.map(dream => `
+Replace this with your real message. You can write about the places you want to visit, the memories you hope to create, and the future you're looking forward to sharing.
 
-<div class="future-card">
+</p>
 
-<h3>${dream.title}</h3>
+<p>
 
-<p>${dream.description}</p>
+Make this as personal and heartfelt as you want. This page should feel like a promise for tomorrow.
+
+</p>
+
+<p>
+
+❤️ Always with you.
+
+</p>
 
 </div>
-
-`).join("")}
 
 </div>
 
 `;
 
-    }
+}
 
 };
