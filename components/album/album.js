@@ -10,6 +10,12 @@ const AlbumPage = {
 
 <h1 class="page-title">📷 Our Album</h1>
 
+<div class="album-summary">
+
+❤️ ${this.photos.length} Memories Collected
+
+</div>
+
 <div class="album-grid">
 
 ${this.photos.map((photo,index)=>`
@@ -211,3 +217,4 @@ viewer.classList.remove("hidden");
     });
 
 }
+
