@@ -86,19 +86,34 @@ position:absolute;
 
 cursor:pointer;
 
+width:42px;
+
+height:auto;
+
+transform:translate(-50%,-50%);
+
 transition:
 transform .25s ease,
 filter .25s ease;
 
-animation:pinFloat 2.5s ease-in-out infinite;
+filter:
+drop-shadow(0 6px 10px rgba(0,0,0,.25))
+drop-shadow(0 0 10px rgba(255,170,190,.45));
+
+animation:pinFloat 2.8s ease-in-out infinite;
 
 }
 
 .map-pin:hover{
 
-transform:translate(-50%,-50%) scale(1.2);
+transform:translate(-50%,-50%) scale(1.18);
+
+filter:
+drop-shadow(0 8px 16px rgba(0,0,0,.3))
+drop-shadow(0 0 18px rgba(255,170,190,.7));
 
 }
+
 
 .place-info{
 
@@ -124,13 +139,13 @@ filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));
 
 0%,100%{
 
-transform:translateY(0);
+transform:translate(-50%,-50%) translateY(0);
 
 }
 
 50%{
 
-transform:translateY(-8px);
+transform:translate(-50%,-50%) translateY(-6px);
 
 }
 

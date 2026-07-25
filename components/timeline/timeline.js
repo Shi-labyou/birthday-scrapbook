@@ -30,40 +30,17 @@ ${this.events.map((event,index)=>`
 
 <div class="timeline-card">
 
-
-${event.image ? `
-
-<img
-
-class="timeline-image"
-
-src="${event.image}"
-
-onerror="this.src='assets/images/album/placeholder.jpg'">
-
-` : ""}
-
-
 <h3>
-
 ${event.title}
-
 </h3>
 
-
 <p class="timeline-date">
-
 ${event.date}
-
 </p>
-
 
 <p>
-
 ${event.description}
-
 </p>
-
 
 </div>
 

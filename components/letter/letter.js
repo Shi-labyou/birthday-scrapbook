@@ -48,7 +48,36 @@ I wish you a happy birthday and a pleasant day!
 
         text: `
 
-YOUR MAIN LETTER WILL GO HERE.
+Haiii Alii! Birthday mo na bukas, or maybe ngayon? Hindi ko alam kung kalian mo to oopen eh HAHAHA. So I wish you a very veryy
+HAPPY BIRTHDAY!
+
+Are you Happy? 
+
+I hope you had a good day today:)) I'm so sorry I couldn't be by your side to celebrate your supposed most special birthday :(( I hope this letter could make your day happy, even a little bit!
+I love you so soo much, Ali <3
+
+If you were feeling lonely, You can always approach me, I'll listen and be your twin >.<
+If you were sad and hurt, I'm here to relieve your pain and be your comfort person <3
+If you felt something heavy inside your chest, you can let it all out and tell me, you can give me the burden you're feeling
+If you were feeling angry and upset, you can rant and vent it onto me
+I will always be here to listen to you
+
+I love you so much, Ali. I want you to know that you are my favorite person, and my favorite of all beings and things in all universe. You means so much to me :))) 
+
+I appreciate all the love you have given me
+I appreciate all the experiences you've shared with me
+I appreciate all the things you gave me
+I appreciate all the efforts you put into me
+I appreciate this journey with you <3
+
+I whole heartedly wish you all the best in the whole universe! I know you deserve all of it! I wish you a happiest life ahead of you, and a very happy family you'd yearn for :)
+
+I admire your bravery, on how you tackle the obstacles on your journey
+I admire how you're able to handle your emotions now
+I admire how you face the cruelty of this world
+and I admire the most that you chose to continue to live, despite all of it, I hope you will always continue to do so <hugs, hugss, hugsss>
+
+Now that you're 18, and legally adult(but still my baby inside). I hope many opportunities will come and open up for you. I wish you a fun and enjoyable college life! I hope you would have friends that will also be there for you and share memorable experiences with you, and be by your side throughout your entire college journey<3 I wish you would enjoy every moment of your life to the fullest dahil times will come and go, everything present right now will eventually be a fragment of memory, I just wish na if ever you would go back to these years of memory, I hope you enjoy it and don't have any regrets
 
 
 `

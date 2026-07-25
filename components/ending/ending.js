@@ -20,7 +20,7 @@ Happy Birthday
 
 <p class="ending-line line-1">
 
-You discovered every memory.
+You explored every chapter here baby.
 
 </p>
 
@@ -34,17 +34,17 @@ was made especially for you.
 
 <p class="ending-line line-3">
 
-I hope this scrapbook made you smile,
-
-even just a little.
+I hope you enjoyed your time reading these chapters baby.
+ I hope I made you smile :)
 
 </p>
 
 <p class="ending-line line-4">
 
-Thank you for being part of these memories.
+Thank you for being part of these memories<3
 
-Happy Birthday ❤️
+
+Happyyy Birthdayyy!!!
 
 </p>
 

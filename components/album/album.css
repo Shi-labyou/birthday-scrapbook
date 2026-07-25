@@ -42,13 +42,24 @@
 
 .album-image{
 
-    background:white;
+display:block;
+
+width:100%;
+
+aspect-ratio:4/3;
+
+object-fit:cover;
+object-position:center;
+
+background:white;
 
 padding:10px;
 
-box-shadow:0 12px 30px rgba(0,0,0,.15);
+box-sizing:border-box;
 
 border-radius:4px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.15);
 
 }
 

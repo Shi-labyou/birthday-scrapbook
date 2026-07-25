@@ -1,16 +1,105 @@
 const PlacesData=[
 
 {
-    location:"Batangas City",
+    location:"Candelaria",
+
+    top:"68%",
+    left:"19%",
+
+    places:[
+
+        {
+            name:"WalterMart",
+            description:"Our meeting place, eating place, and unwind area"
+        },
+
+        {
+            name:"Jolibee",
+            description:"First time date going out"
+        },
+
+        {
+            name:"Mcdo",
+            description:"Gutom pa rin and no place open, so we go here"
+        },
+
+        {
+            name:"Seasoned Unlimited Samgyupsal",
+            description:"First katakawan with you"
+        },
+
+        {
+            name:"Pamana Café",
+            description:"First date of relaxing view of the mountains & Yummy foods"
+        },
+
+        {
+            name:"Dear Stranger Cafe",
+            description:"Good ambiance place with a little privacy"
+        },
+
+        {
+            name:"Antikan Café & Restaurant",
+            description:"First antique dining place we ate"
+        },
+
+        {
+            name:"Brewleaf Cafe",
+            description:"No choice, so we ate here + catch up"
+        }
+
+    ]
+
+},
+
+
+{
+    location:"Lucban",
+
+    top:"2%",
+    left:"53%",
+
+    places:[
+
+        {
+            name:"Southern Luzon State University",
+            description:"First Time at Lucban and College Entrance Exam"
+        }
+
+    ]
+
+},
+
+
+{
+    location:"Lucena City",
+
+    top:"63%",
+    left:"70%",
+
+    places:[
+
+        {
+            name:"SM Lucena",
+            description:"Movie dates, Arcade, Photobooth, Eating out, and Celebrating"
+        }
+
+    ]
+
+},
+
+
+{
+    location:"Lutucan, Sambat",
 
     top:"66%",
-    left:"18%",
+    left:"36%",
 
     places:[
 
         {
-            name:"Candelaria",
-            description:"The place where another chapter of our story began."
+            name:"7-Eleven",
+            description:"Jeep/Bus stop pauwi & meeting place"
         }
 
     ]
@@ -19,16 +108,21 @@ const PlacesData=[
 
 
 {
-    location:"Tagaytay",
+    location:"GuisGuis",
 
-    top:"0%",
-    left:"52%",
+    top:"95%",
+    left:"39%",
 
     places:[
 
         {
-            name:"Lucban",
-            description:"One of our favorite places."
+            name:"GuisGuis-Talon",
+            description:"Relaxing beach/nature dates"
+        },
+
+        {
+            name:"GuisGuis-San Roque",
+            description:"7-Eleven"
         }
 
     ]
@@ -37,16 +131,26 @@ const PlacesData=[
 
 
 {
-    location:"Soon...",
+    location:"Sariaya, Bayan",
 
-    top:"62%",
-    left:"69%",
+    top:"56%",
+    left:"45%",
 
     places:[
 
         {
-            name:"Lucena",
-            description:"A place we'll visit together someday."
+            name:"Cafe Lokal",
+            description:"Celebration after G10 4rd Quarter"
+        },
+
+        {
+            name:"Jollibee",
+            description:"Take-out pasalubong"
+        },
+
+        {
+            name:"Rodillias",
+            description:"Yema Cake"
         }
 
     ]
@@ -55,61 +159,7 @@ const PlacesData=[
 
 
 {
-    location:"Tagaytay",
-
-    top:"66%",
-    left:"35%",
-
-    places:[
-
-        {
-            name:"Lutucan, Sambat",
-            description:"One of our favorite places."
-        }
-
-    ]
-
-},
-
-
-{
-    location:"Tagaytay",
-
-    top:"93%",
-    left:"38%",
-
-    places:[
-
-        {
-            name:"Guis-Guis",
-            description:"One of our favorite places."
-        }
-
-    ]
-
-},
-
-
-{
-    location:"Tagaytay",
-
-    top:"54%",
-    left:"44%",
-
-    places:[
-
-        {
-            name:"Sariaya, Bayan",
-            description:"One of our favorite places."
-        }
-
-    ]
-
-},
-
-
-{
-    location:"Tagaytay",
+    location:"Lutucan Malabag",
 
     top:"78%",
     left:"33%",
@@ -117,9 +167,15 @@ const PlacesData=[
     places:[
 
         {
-            name:"Lutucan, Malabag",
-            description:"One of our favorite places."
+            name:"Lutucan Integrated National High School",
+            description:"The place we met and the school we shared"
+        },
+
+        {
+            name:"Monkey Heist",
+            description:"Many manyy manyyy dates + manyy experiences"
         }
+
 
     ]
 
