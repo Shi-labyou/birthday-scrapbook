@@ -140,15 +140,15 @@ const totalCharacters=text.length;
 
 function getDelay(character){
 
-if(character===" ") return 25;
+if(character===" ") return 12;
 
-if(character===",") return 220;
+if(character===",") return 90;
 
-if(character==="." || character==="!" || character==="?") return 420;
+if(character==="." || character==="!" || character==="?") return 180;
 
-if(character==="\n") return 300;
+if(character==="\n") return 120;
 
-return 32+Math.random()*14;
+return 16 + Math.random()*8;
 
 }
 
